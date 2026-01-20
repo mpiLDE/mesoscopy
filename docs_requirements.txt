@@ -5,7 +5,7 @@ nbclient==0.10.2
 nbconvert
 nbformat==5.8.0
 nbsphinx==0.9.8
-sphinx-jsonschema==1.19.1
+sphinx-jsonschema==1.19.2
 sphinx-rtd-theme==3.1.0
 sphinxcontrib-applehelp==2.0.0
 sphinxcontrib-devhelp==1.0.2
