@@ -13,7 +13,7 @@ sphinxcontrib-htmlhelp==2.0.1
 sphinxcontrib-jsmath==1.0.1
 sphinxcontrib-qthelp==1.0.3
 sphinxcontrib-serializinghtml==1.1.5
-sphinxcontrib-towncrier==0.3.2a0
+sphinxcontrib-towncrier==0.5.0a0
 qcodes==0.46.0
 zhinst
 zhinst-qcodes
