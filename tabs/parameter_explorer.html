@@ -1,0 +1,280 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parameter explorer tab &mdash; mesoscoPy documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=938c9ccc"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Measurement tab" href="measurement.html" />
+    <link rel="prev" title="Instruments tab" href="instruments.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            mesoscoPy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../station_file.html">Building the station file</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The tabs</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="data.html">Data tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruments.html">Instruments tab</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Parameter explorer tab</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-an-experiment-parameter">What is an experiment parameter?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-instrument-parameters-left">The instrument parameters (left)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#making-an-experiment-parameter">Making an experiment parameter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#derived-parameters">Derived parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#traces">Traces</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#the-experiment-parameters-right">The experiment parameters (right)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="measurement.html">Measurement tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="queue.html">Queue tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monitor.html">Monitor tab</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The whole program</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../program/settings.html">Settings and About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../program/safety.html">Safety</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../program/roadmap.html">Limitations and roadmap</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">More</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">mesoscoPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Parameter explorer tab</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/mpilde/mesoscopy/blob/main/docs/tabs/parameter_explorer.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="parameter-explorer-tab">
+<span id="parameter-explorer"></span><h1>Parameter explorer tab<a class="headerlink" href="#parameter-explorer-tab" title="Link to this heading"></a></h1>
+<p>An instrument has hundreds of parameters; a measurement needs a few. The Parameter explorer is where you <strong>browse</strong> all the
+parameters of the connected instruments and <strong>choose the ones you work with</strong>. These are the <em>experiment parameters</em>, and they
+are the only parameters the Measurement, Queue and Monitor tabs offer.</p>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/explorer_tab.png"><img alt="The Parameter explorer: the parameters of an instrument on the left, the experiment parameters on the right" src="../_images/explorer_tab.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Left: the parameters of <code class="docutils literal notranslate"><span class="pre">dummy_dac</span></code>. Right: the experiment parameters. A tick in the first column of the left table
+means that the parameter is already an experiment parameter.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<nav class="contents local" id="on-this-page">
+<p class="topic-title">On this page</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#what-is-an-experiment-parameter" id="id2">What is an experiment parameter?</a></p></li>
+<li><p><a class="reference internal" href="#the-instrument-parameters-left" id="id3">The instrument parameters (left)</a></p></li>
+<li><p><a class="reference internal" href="#making-an-experiment-parameter" id="id4">Making an experiment parameter</a></p></li>
+<li><p><a class="reference internal" href="#the-experiment-parameters-right" id="id5">The experiment parameters (right)</a></p></li>
+</ul>
+</nav>
+<section id="what-is-an-experiment-parameter">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">What is an experiment parameter?</a><a class="headerlink" href="#what-is-an-experiment-parameter" title="Link to this heading"></a></h2>
+<p>An experiment parameter is an instrument parameter <em>with a name of your choice and a protection</em>:</p>
+<ul class="simple">
+<li><p>a <strong>name</strong> (<code class="docutils literal notranslate"><span class="pre">Vtop</span></code>, <code class="docutils literal notranslate"><span class="pre">gate</span></code>, <code class="docutils literal notranslate"><span class="pre">temperature</span></code> …), the one you see in sweeps, plots and the database;</p></li>
+<li><p>an optional <strong>gain</strong> (<code class="docutils literal notranslate"><span class="pre">value</span> <span class="pre">=</span> <span class="pre">instrument</span> <span class="pre">value</span> <span class="pre">×</span> <span class="pre">gain</span></code>, for a voltage divider or a current amplifier);</p></li>
+<li><p><strong>safe limits</strong>: the parameter can never be set outside them;</p></li>
+<li><p>a <strong>maximum ramp rate</strong>: a change is always made in small steps that never exceed it;</p></li>
+<li><p>an optional <strong>breakout condition</strong> that stops a measurement when the value crosses a threshold.</p></li>
+</ul>
+<p>The aliases written in the <a class="reference internal" href="../station_file.html#station-file"><span class="std std-ref">station file</span></a> become experiment parameters when their instrument is loaded.
+You can make more here, change them, or remove them; the definitions are remembered between sessions.</p>
+</section>
+<section id="the-instrument-parameters-left">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">The instrument parameters (left)</a><a class="headerlink" href="#the-instrument-parameters-left" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt><strong>Component</strong></dt><dd><p>Two drop-downs that walk the tree of the station: pick an instrument, then (if it has them) a channel or a sub-module.
+Choose a single parameter to see only that one.</p>
+</dd>
+<dt><strong>Include sub-components</strong></dt><dd><p>Lists everything below the selection instead of only its direct parameters (at most 300 parameters at once; pick a
+sub-component to see the others).</p>
+</dd>
+<dt><strong>Read all</strong></dt><dd><p>Reads every listed parameter.</p>
+</dd>
+</dl>
+<p>For each parameter the table shows its name, label, unit and last known value, a <strong>Read</strong> button, a field and a <strong>Set</strong> button
+to change it, and the <strong>validator</strong>, <strong>step</strong> and <strong>inter-delay</strong> that QCoDeS applies when it is set. Type a value in the
+field and press Enter or <strong>Set</strong>: the value is checked against the validator <em>before</em> it is sent, and a parameter with a ramp
+rate is moved in steps. Parameters that cannot be set say <em>read-only</em>.</p>
+<p>Some drivers set several values with one command; QCoDeS calls them <em>group parameters</em>. They are shown next to each other with
+a ⛓ mark and a grey background, and reading or setting one of them updates the others at once.</p>
+<p>Right-click a parameter for a menu:</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/explorer_menu.png"><img alt="The right-click menu of a parameter" src="../_images/explorer_menu.png" style="width: 35%;" />
+</a>
+</figure>
+<ul class="simple">
+<li><p><strong>Add to experiment parameters…</strong> (or <strong>Edit experiment parameter…</strong> if it is one already);</p></li>
+<li><p><strong>Add as trace…</strong> for an array-valued parameter (see below);</p></li>
+<li><p><strong>Monitor</strong> / <strong>Remove from monitor</strong>: show it in <a class="reference internal" href="monitor.html#monitor"><span class="std std-ref">the Monitor tab</span></a>;</p></li>
+<li><p><strong>Add alarm</strong> / <strong>Remove alarm</strong>: raise an alarm when the value gets close to its limits (see <a class="reference internal" href="../program/safety.html#safety"><span class="std std-ref">Safety</span></a>);</p></li>
+<li><p><strong>Restore previous value</strong>: puts back the value the parameter had before the last time you set it here, one step at a time.</p></li>
+</ul>
+</section>
+<section id="making-an-experiment-parameter">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Making an experiment parameter</a><a class="headerlink" href="#making-an-experiment-parameter" title="Link to this heading"></a></h2>
+<p>Select an instrument parameter and click <strong>Add to experiment parameters…</strong>, or double-click its row.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/dialog_experiment_parameter.png"><img alt="The experiment parameter dialog" src="../_images/dialog_experiment_parameter.png" style="width: 60%;" />
+</a>
+</figure>
+<dl class="simple">
+<dt><em>Name</em></dt><dd><p>Letters, digits and underscores. It must be unique and cannot be a name of the station.</p>
+</dd>
+<dt><em>Unit</em></dt><dd><p>Shown in the program and in the plots. It is taken from the instrument when you leave it empty.</p>
+</dd>
+<dt><em>Gain</em></dt><dd><p>The instrument value is multiplied by this to give the value of the experiment parameter.</p>
+</dd>
+<dt><em>Safe limits</em> (min and max)</dt><dd><p>The range the parameter may take. Leave a side empty for no limit on that side.</p>
+</dd>
+<dt><em>Max ramp rate (unit/s)</em></dt><dd><p>The largest change per second. mesoscoPy makes every set in steps of this rate, one step every 0.1 s.</p>
+</dd>
+<dt><em>Source</em></dt><dd><p>The instrument parameter it is made from (shown, not editable).</p>
+</dd>
+<dt><em>Use as a breakout condition</em></dt><dd><p>Tick it to enable the <strong>breakout condition</strong>: <em>Stop the measurement when</em> the value (or its <em>absolute value</em>, if ticked) is
+<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> or <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> a threshold. A measurement with <em>Stop on breakout conditions</em> ticked ends cleanly when it
+becomes true (a leaking gate, for instance). See <a class="reference internal" href="measurement.html#measurement"><span class="std std-ref">Measurement tab</span></a>.</p>
+</dd>
+</dl>
+<p>The limits, the ramp rate and the gain only apply to parameters that can be set.</p>
+<section id="derived-parameters">
+<h3>Derived parameters<a class="headerlink" href="#derived-parameters" title="Link to this heading"></a></h3>
+<p>A <strong>derived parameter</strong> is computed from other experiment parameters and is read-only: a carrier density from a gate voltage,
+a conductance from a current and a voltage. Click <strong>Add derived parameter…</strong> and type the expression:</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/dialog_derived_parameter.png"><img alt="The derived parameter dialog" src="../_images/dialog_derived_parameter.png" style="width: 60%;" />
+</a>
+</figure>
+<p>The expression uses the names of the other experiment parameters, <code class="docutils literal notranslate"><span class="pre">np</span></code> (NumPy) and <code class="docutils literal notranslate"><span class="pre">const</span></code> (<code class="docutils literal notranslate"><span class="pre">scipy.constants</span></code>), for
+example <code class="docutils literal notranslate"><span class="pre">0.5</span> <span class="pre">*</span> <span class="pre">(dummy_dac_Vtop</span> <span class="pre">+</span> <span class="pre">dummy_dac_Vback)</span></code>. The parameter reads its sources every time it is read, and can be measured
+and plotted like any other.</p>
+</section>
+<section id="traces">
+<h3>Traces<a class="headerlink" href="#traces" title="Link to this heading"></a></h3>
+<p>Some instruments return a whole array in one reading: a spectrum, a time trace. There are two kinds:</p>
+<ul>
+<li><p>A driver may provide a trace <em>with its own axis</em> (a <code class="docutils literal notranslate"><span class="pre">ParameterWithSetpoints</span></code> in QCoDeS). Add it with <strong>Add to experiment
+parameters…</strong>: it is measured as it is, and its axis is saved with it.</p></li>
+<li><p>A plain array parameter has no axis. Right-click it, <strong>Add as trace…</strong>, and describe the axis: a start, a stop and a number
+of points, or the values of another parameter.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/dialog_trace_parameter.png"><img alt="The trace dialog" src="../_images/dialog_trace_parameter.png" style="width: 60%;" />
+</a>
+</figure>
+</li>
+</ul>
+<p>Measure a trace in the Measurement tab like any parameter: every reading is one curve (see <a class="reference internal" href="measurement.html#measurement"><span class="std std-ref">Measurement tab</span></a>).</p>
+</section>
+</section>
+<section id="the-experiment-parameters-right">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">The experiment parameters (right)</a><a class="headerlink" href="#the-experiment-parameters-right" title="Link to this heading"></a></h2>
+<p>The table lists every experiment parameter with its source, unit, gain, safe range, maximum ramp rate, breakout condition and
+a <em>Status</em> (<code class="docutils literal notranslate"><span class="pre">ready</span></code>, or the reason it cannot be used, for instance that its instrument is not connected).</p>
+<dl class="simple">
+<dt><strong>Add derived parameter…</strong></dt><dd><p>Makes a derived parameter.</p>
+</dd>
+<dt><strong>Edit…</strong></dt><dd><p>Changes the selected parameter (double-click does the same). A parameter that other parameters or recipes use can be edited,
+but not removed while others are computed from it.</p>
+</dd>
+<dt><strong>Remove</strong></dt><dd><p>Removes it. A parameter declared in the station file can be brought back with the button below.</p>
+</dd>
+<dt><strong>Ramp all to zero</strong></dt><dd><p>Brings every settable experiment parameter to 0, at its maximum ramp rate (a parameter without a ramp rate is set
+directly). Each parameter ramps in its own job: parameters of different instruments ramp together. Use it to leave the
+sample safe. It is refused while a measurement runs.</p>
+</dd>
+<dt><strong>Restore parameters from the station file</strong></dt><dd><p>Shown when you removed parameters that the station file declares: brings them back.</p>
+</dd>
+</dl>
+<p>Right-click a row for <strong>Edit…</strong>, <strong>Remove</strong>, <strong>Ramp to 0</strong>, and <strong>Monitor</strong>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="instruments.html" class="btn btn-neutral float-left" title="Instruments tab" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="measurement.html" class="btn btn-neutral float-right" title="Measurement tab" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

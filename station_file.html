@@ -1,0 +1,366 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Building the station file &mdash; mesoscoPy documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=938c9ccc"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Data tab" href="tabs/data.html" />
+    <link rel="prev" title="Quick overview" href="quickstart.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            mesoscoPy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Building the station file</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-basics">The basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-an-instrument-entry-contains">What an instrument entry contains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-parameter-at-the-root-of-the-station">A parameter at the root of the station</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-complete-example-without-hardware">A complete example without hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-lock-in-amplifier">A lock-in amplifier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#instruments-that-use-a-visa-address">Instruments that use a VISA address</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#checking-the-file">Checking the file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#common-problems">Common problems</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The tabs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tabs/data.html">Data tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tabs/instruments.html">Instruments tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tabs/parameter_explorer.html">Parameter explorer tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tabs/measurement.html">Measurement tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tabs/queue.html">Queue tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tabs/monitor.html">Monitor tab</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The whole program</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="program/settings.html">Settings and About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="program/safety.html">Safety</a></li>
+<li class="toctree-l1"><a class="reference internal" href="program/roadmap.html">Limitations and roadmap</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">More</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">mesoscoPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Building the station file</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/mpilde/mesoscopy/blob/main/docs/station_file.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="building-the-station-file">
+<span id="station-file"></span><h1>Building the station file<a class="headerlink" href="#building-the-station-file" title="Link to this heading"></a></h1>
+<p>The <strong>station file</strong> tells mesoscoPy which instruments you have, how to reach them and which of their parameters you want to
+use. It is a text file in the YAML format, the one QCoDeS calls a <em>station configuration</em>. You write it once for a setup and
+load it from <a class="reference internal" href="tabs/instruments.html#instruments"><span class="std std-ref">the Instruments tab</span></a> every time you start the program.</p>
+<nav class="contents local" id="on-this-page">
+<p class="topic-title">On this page</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#the-basics" id="id1">The basics</a></p></li>
+<li><p><a class="reference internal" href="#what-an-instrument-entry-contains" id="id2">What an instrument entry contains</a></p></li>
+<li><p><a class="reference internal" href="#a-parameter-at-the-root-of-the-station" id="id3">A parameter at the root of the station</a></p></li>
+<li><p><a class="reference internal" href="#a-complete-example-without-hardware" id="id4">A complete example without hardware</a></p></li>
+<li><p><a class="reference internal" href="#a-lock-in-amplifier" id="id5">A lock-in amplifier</a></p></li>
+<li><p><a class="reference internal" href="#instruments-that-use-a-visa-address" id="id6">Instruments that use a VISA address</a></p></li>
+<li><p><a class="reference internal" href="#checking-the-file" id="id7">Checking the file</a></p></li>
+<li><p><a class="reference internal" href="#common-problems" id="id8">Common problems</a></p></li>
+</ul>
+</nav>
+<section id="the-basics">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">The basics</a><a class="headerlink" href="#the-basics" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>The file name must end with <code class="docutils literal notranslate"><span class="pre">.station.yaml</span></code> (<code class="docutils literal notranslate"><span class="pre">fridge.station.yaml</span></code>, <code class="docutils literal notranslate"><span class="pre">dummy.station.yaml</span></code> …). The Instruments tab
+lists the files of that kind that it finds in the <em>station folder</em> you choose.</p></li>
+<li><p>Indent with <strong>spaces</strong> (two per level), never with tabs. A <code class="docutils literal notranslate"><span class="pre">#</span></code> starts a comment.</p></li>
+<li><p>The file has one top-level key, <code class="docutils literal notranslate"><span class="pre">instruments</span></code>. Each entry below it describes one instrument and is named by you: that
+name is how the instrument appears in the program and in the database.</p></li>
+</ul>
+<p>The smallest useful station file is this one, a simulated instrument that needs no hardware:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">instruments</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">dummy_dac</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">qcodes.instrument_drivers.mock_instruments.DummyInstrument</span>
+<span class="w">    </span><span class="nt">init</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">gates</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">ch1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">ch2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">ch3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">ch4</span><span class="p p-Indicator">]</span>
+</pre></div>
+</div>
+<p>Load it, and <code class="docutils literal notranslate"><span class="pre">dummy_dac</span></code> appears in the <em>Instruments to Load</em> list.</p>
+</section>
+<section id="what-an-instrument-entry-contains">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">What an instrument entry contains</a><a class="headerlink" href="#what-an-instrument-entry-contains" title="Link to this heading"></a></h2>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">type</span></code></dt><dd><p>The Python path of the driver class, as you would import it: <code class="docutils literal notranslate"><span class="pre">package.module.ClassName</span></code>. Drivers come from
+<a class="reference external" href="https://microsoft.github.io/Qcodes/">QCoDeS</a> (<code class="docutils literal notranslate"><span class="pre">qcodes.instrument_drivers...</span></code>), from the <a class="reference external" href="https://github.com/QCoDeS/Qcodes_contrib_drivers">QCoDeS contrib drivers</a> (<code class="docutils literal notranslate"><span class="pre">qcodes_contrib_drivers.drivers...</span></code>), from mesoscoPy itself
+(<code class="docutils literal notranslate"><span class="pre">mesoscopy.instrument.temperature</span></code> has the Oxford Instruments ITC503 and Mercury iTC and the Montana Instruments
+Cryostation) or from a module of your own that Python can import.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">init</span></code></dt><dd><p>The arguments the driver needs to connect, exactly as its constructor asks for them: a VISA <code class="docutils literal notranslate"><span class="pre">address</span></code>, a <code class="docutils literal notranslate"><span class="pre">serial</span></code>
+number and <code class="docutils literal notranslate"><span class="pre">host</span></code> for a Zurich Instruments device, a <code class="docutils literal notranslate"><span class="pre">gates</span></code> list for the simulated instrument. The name you gave the
+entry is passed as the instrument’s <code class="docutils literal notranslate"><span class="pre">name</span></code>; do not repeat it.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">enable_forced_reconnect:</span> <span class="pre">true</span></code></dt><dd><p>Lets the instrument be loaded again when a previous session did not close it properly (QCoDeS would otherwise refuse
+because the name is still in use). It is on in the examples of this page.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">parameters</span></code></dt><dd><p>The <strong>presets</strong>: values QCoDeS sets, in the order you write them, as soon as the instrument is loaded. The key is the path of
+the parameter inside the instrument (<code class="docutils literal notranslate"><span class="pre">ch1</span></code>, <code class="docutils literal notranslate"><span class="pre">oscs[0].freq</span></code>, <code class="docutils literal notranslate"><span class="pre">sigouts[0].range</span></code>) and the value says what to do with
+it:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">parameters</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ch1</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">initial_value</span><span class="p">:</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="nt"> limits</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">5</span><span class="p p-Indicator">]}</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">sigouts[0].range</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">initial_value</span><span class="p">:</span><span class="w"> </span><span class="nv">10</span><span class="p p-Indicator">}</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">initial_value</span></code> sets the parameter at load time. <code class="docutils literal notranslate"><span class="pre">limits:</span> <span class="pre">[min,</span> <span class="pre">max]</span></code> makes QCoDeS refuse any value outside the
+range. <code class="docutils literal notranslate"><span class="pre">step</span></code> and <code class="docutils literal notranslate"><span class="pre">inter_delay</span></code> make QCoDeS change the parameter by at most <code class="docutils literal notranslate"><span class="pre">step</span></code> every <code class="docutils literal notranslate"><span class="pre">inter_delay</span></code> seconds.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">add_parameters</span></code></dt><dd><p>The <strong>aliases</strong>: short names for parameters that are deep in the instrument’s tree. This is what you will use most.
+Every alias becomes an <em>experiment parameter</em> in <a class="reference internal" href="tabs/parameter_explorer.html#parameter-explorer"><span class="std std-ref">the Parameter explorer</span></a>, named
+<code class="docutils literal notranslate"><span class="pre">&lt;instrument&gt;_&lt;alias&gt;</span></code>, as soon as the instrument is loaded:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">add_parameters</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Vtop</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="nv">ch1</span><span class="p p-Indicator">,</span><span class="nt"> unit</span><span class="p">:</span><span class="w"> </span><span class="nv">V</span><span class="p p-Indicator">,</span><span class="nt"> limits</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">],</span><span class="nt"> step</span><span class="p">:</span><span class="w"> </span><span class="nv">0.1</span><span class="p p-Indicator">,</span><span class="nt"> inter_delay</span><span class="p">:</span><span class="w"> </span><span class="nv">0.05</span><span class="p p-Indicator">}</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">source</span></code></dt><dd><p>the path of the real parameter inside the instrument;</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">unit</span></code></dt><dd><p>the unit shown in the program;</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">limits</span></code></dt><dd><p>the <strong>safe limits</strong> of the experiment parameter: a sweep or a set beyond them is refused;</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">step</span></code> and <code class="docutils literal notranslate"><span class="pre">inter_delay</span></code></dt><dd><p>the <strong>maximum ramp rate</strong>. <code class="docutils literal notranslate"><span class="pre">step</span></code> divided by <code class="docutils literal notranslate"><span class="pre">inter_delay</span></code> is the largest change per second: in the example, 0.1 V
+every 0.05 s is 2 V/s. Every set of that parameter, in a sweep or by hand, is made in steps of that size.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Put the safe limits and the ramp rate in the station file for every gate and every source. They are then the same each
+time you load the station, and a typing mistake in a sweep cannot send a dangerous voltage to the sample.</p>
+</div>
+</section>
+<section id="a-parameter-at-the-root-of-the-station">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">A parameter at the root of the station</a><a class="headerlink" href="#a-parameter-at-the-root-of-the-station" title="Link to this heading"></a></h2>
+<p>An entry whose <code class="docutils literal notranslate"><span class="pre">type</span></code> is a QCoDeS <em>parameter</em> class instead of an instrument is a parameter that belongs to no instrument.
+The usual one is a clock:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">instruments</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">elapsed_time</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">qcodes.parameters.ElapsedTimeParameter</span>
+</pre></div>
+</div>
+<p>It is available in the Parameter explorer as soon as the file is loaded, and you can measure it like any other parameter.</p>
+</section>
+<section id="a-complete-example-without-hardware">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">A complete example without hardware</a><a class="headerlink" href="#a-complete-example-without-hardware" title="Link to this heading"></a></h2>
+<p>This is the file used by <a class="reference internal" href="quickstart.html#quickstart"><span class="std std-ref">the quick overview</span></a> (<a class="reference download internal" download="" href="_downloads/7c93785821c0303e75de35cfc1e95362/dummy.station.yaml"><code class="xref download docutils literal notranslate"><span class="pre">download</span> <span class="pre">it</span></code></a>):</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># A station made of simulated instruments: it needs no hardware, so you can try every tab of mesoscoPy.</span>
+<span class="c1"># Save it as dummy.station.yaml in a folder of its own and choose that folder in the Instruments tab.</span>
+<span class="c1">#</span>
+<span class="c1">#   dummy_dac   four gates (ch1 ... ch4). Vtop and Vback are aliases of ch1 and ch2 with safe limits and a ramp rate.</span>
+<span class="c1">#   dummy_dmm   two readings that follow the gates: signal = a peak at ch1 = 0, signal2 = sin(ch2)</span>
+<span class="c1">#   dummy_scope a 64-point spectrum whose peak moves with ch1: `spectrum` is a plain array, `trace` has its own axis</span>
+<span class="c1">#</span>
+<span class="c1"># parameters:      presets, applied as soon as the instrument is loaded.</span>
+<span class="c1"># add_parameters:  aliases: each one becomes an experiment parameter (Parameter explorer tab) named &lt;instrument&gt;_&lt;alias&gt;.</span>
+
+<span class="nt">instruments</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">dummy_dac</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">qcodes.instrument_drivers.mock_instruments.DummyInstrument</span>
+<span class="w">    </span><span class="nt">init</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">gates</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">ch1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">ch2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">ch3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">ch4</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">parameters</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">ch1</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">initial_value</span><span class="p">:</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="nt"> limits</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">5</span><span class="p p-Indicator">]}</span>
+<span class="w">      </span><span class="nt">ch2</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">initial_value</span><span class="p">:</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="nt"> limits</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">5</span><span class="p p-Indicator">]}</span>
+<span class="w">    </span><span class="nt">add_parameters</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">Vtop</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="nv">ch1</span><span class="p p-Indicator">,</span><span class="nt"> unit</span><span class="p">:</span><span class="w"> </span><span class="nv">V</span><span class="p p-Indicator">,</span><span class="nt"> limits</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">],</span><span class="nt"> step</span><span class="p">:</span><span class="w"> </span><span class="nv">0.1</span><span class="p p-Indicator">,</span><span class="nt"> inter_delay</span><span class="p">:</span><span class="w"> </span><span class="nv">0.05</span><span class="p p-Indicator">}</span>
+<span class="w">      </span><span class="nt">Vback</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="nv">ch2</span><span class="p p-Indicator">,</span><span class="nt"> unit</span><span class="p">:</span><span class="w"> </span><span class="nv">V</span><span class="p p-Indicator">,</span><span class="nt"> limits</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">5</span><span class="p p-Indicator">],</span><span class="nt"> step</span><span class="p">:</span><span class="w"> </span><span class="nv">0.2</span><span class="p p-Indicator">,</span><span class="nt"> inter_delay</span><span class="p">:</span><span class="w"> </span><span class="nv">0.05</span><span class="p p-Indicator">}</span>
+<span class="w">  </span><span class="nt">dummy_dmm</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mesoscopy.instrument.dummy.DummyMeter</span>
+<span class="w">    </span><span class="nt">init</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dummy_dac</span>
+<span class="w">    </span><span class="nt">add_parameters</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">signal</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="nv">v1</span><span class="p p-Indicator">,</span><span class="nt"> unit</span><span class="p">:</span><span class="w"> </span><span class="nv">V</span><span class="p p-Indicator">}</span>
+<span class="w">      </span><span class="nt">signal2</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="nv">v2</span><span class="p p-Indicator">,</span><span class="nt"> unit</span><span class="p">:</span><span class="w"> </span><span class="nv">V</span><span class="p p-Indicator">}</span>
+<span class="w">  </span><span class="nt">dummy_scope</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mesoscopy.instrument.dummy.DummySpectrum</span>
+<span class="w">    </span><span class="nt">init</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dummy_dac</span>
+<span class="w">      </span><span class="nt">points</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">64</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">dummy_dac</span></code> has four gates, two of which (<code class="docutils literal notranslate"><span class="pre">ch1</span></code> and <code class="docutils literal notranslate"><span class="pre">ch2</span></code>) start at 0 V and are aliased as <code class="docutils literal notranslate"><span class="pre">Vtop</span></code> and <code class="docutils literal notranslate"><span class="pre">Vback</span></code> with
+their limits and ramp rates. <code class="docutils literal notranslate"><span class="pre">dummy_dmm</span></code> and <code class="docutils literal notranslate"><span class="pre">dummy_scope</span></code> are simulated meters whose readings follow the gates; their
+<code class="docutils literal notranslate"><span class="pre">init</span></code> has a <code class="docutils literal notranslate"><span class="pre">source</span></code> that names the instrument whose gates they read. The aliases give four experiment parameters:
+<code class="docutils literal notranslate"><span class="pre">dummy_dac_Vtop</span></code>, <code class="docutils literal notranslate"><span class="pre">dummy_dac_Vback</span></code>, <code class="docutils literal notranslate"><span class="pre">dummy_dmm_signal</span></code> and <code class="docutils literal notranslate"><span class="pre">dummy_dmm_signal2</span></code>.</p>
+</section>
+<section id="a-lock-in-amplifier">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">A lock-in amplifier</a><a class="headerlink" href="#a-lock-in-amplifier" title="Link to this heading"></a></h2>
+<p>A real instrument is described the same way. This is the beginning of the file for a Zurich Instruments MFLI that is used
+for current-voltage measurements (the repository has the whole file, <code class="docutils literal notranslate"><span class="pre">MFLI_IV.station.yaml</span></code>). Its driver needs the optional
+Zurich Instruments packages of <a class="reference internal" href="installation.html#installation"><span class="std std-ref">the installation</span></a> (step 5):</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">instruments</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">mf6626</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">qcodes_contrib_drivers.drivers.ZurichInstruments.MFLI.MFLI</span>
+<span class="w">    </span><span class="nt">init</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">serial</span><span class="p">:</span><span class="w"> </span><span class="s">'DEV6626'</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="s">'localhost'</span>
+<span class="w">      </span><span class="nt">interface</span><span class="p">:</span><span class="w"> </span><span class="s">'1GbE'</span>
+<span class="w">    </span><span class="nt">enable_forced_reconnect</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">parameters</span><span class="p">:</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">oscs[0].freq</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">initial_value</span><span class="p">:</span><span class="w"> </span><span class="nv">1.0</span><span class="p p-Indicator">}</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">sigins[0].diff</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">initial_value</span><span class="p">:</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">}</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">sigins[0].range</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">initial_value</span><span class="p">:</span><span class="w"> </span><span class="nv">0.003</span><span class="p p-Indicator">}</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">sigouts[0].range</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">initial_value</span><span class="p">:</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">}</span>
+<span class="w">      </span><span class="c1"># the output switch is left OFF: switch it on yourself once the amplitude and the wiring are checked</span>
+<span class="w">      </span><span class="c1"># sigouts[0].on: {initial_value: 1}</span>
+<span class="w">    </span><span class="nt">add_parameters</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">freq</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="s">"oscs[0].freq"</span><span class="p p-Indicator">,</span><span class="nt"> unit</span><span class="p">:</span><span class="w"> </span><span class="nv">Hz</span><span class="p p-Indicator">}</span>
+<span class="w">      </span><span class="nt">amplitude</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="s">"sigouts[0].amplitudes[0].value"</span><span class="p p-Indicator">,</span><span class="nt"> unit</span><span class="p">:</span><span class="w"> </span><span class="nv">V</span><span class="p p-Indicator">}</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not switch an output on from the <code class="docutils literal notranslate"><span class="pre">parameters</span></code> section unless you are sure of what is connected to it: a preset is
+applied every time the instrument is loaded, with nobody looking.</p>
+</div>
+<p>The paths such as <code class="docutils literal notranslate"><span class="pre">oscs[0].freq</span></code> are the ones of the driver (<code class="docutils literal notranslate"><span class="pre">instrument.oscs[0].freq</span></code>). To find them, load the instrument
+and look in <a class="reference internal" href="tabs/parameter_explorer.html#parameter-explorer"><span class="std std-ref">the Parameter explorer</span></a>: choose the instrument in <em>Component</em> and tick <em>Include
+sub-components</em>; the <em>Parameter</em> column shows the full name of each parameter.</p>
+</section>
+<section id="instruments-that-use-a-visa-address">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Instruments that use a VISA address</a><a class="headerlink" href="#instruments-that-use-a-visa-address" title="Link to this heading"></a></h2>
+<p>GPIB, USB, serial and network instruments are reached through a VISA address, which goes in <code class="docutils literal notranslate"><span class="pre">init</span></code>. Replace the address
+and the driver by those of your instrument (the QCoDeS documentation lists the drivers):</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">instruments</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">lockin</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">qcodes.instrument_drivers.stanford_research.SR830.SR830</span>
+<span class="w">    </span><span class="nt">init</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="s">'GPIB0::8::INSTR'</span>
+<span class="w">    </span><span class="nt">add_parameters</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">time_constant</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="nv">time_constant</span><span class="p p-Indicator">,</span><span class="nt"> unit</span><span class="p">:</span><span class="w"> </span><span class="nv">s</span><span class="p p-Indicator">}</span>
+<span class="w">      </span><span class="nt">X</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="nv">X</span><span class="p p-Indicator">,</span><span class="nt"> unit</span><span class="p">:</span><span class="w"> </span><span class="nv">V</span><span class="p p-Indicator">}</span>
+
+<span class="w">  </span><span class="nt">smu</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">qcodes.instrument_drivers.Keithley.Keithley_2450.Keithley2450</span>
+<span class="w">    </span><span class="nt">init</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="s">'USB0::0x05E6::0x2450::04412345::INSTR'</span>
+</pre></div>
+</div>
+<p>To list the addresses that your VISA library sees, run <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-c</span> <span class="pre">&quot;import</span> <span class="pre">pyvisa;</span> <span class="pre">print(pyvisa.ResourceManager().list_resources())&quot;</span></code>
+in the environment.</p>
+<p>The repository also has <code class="docutils literal notranslate"><span class="pre">docs/station_templates.yaml</span></code>: templates for other instrument families (an MFLI used as a slave
+lock-in, the SR830, the SR860, Keithley source meters and the SIM928) that you can copy into your own file.</p>
+</section>
+<section id="checking-the-file">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Checking the file</a><a class="headerlink" href="#checking-the-file" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>In the Instruments tab, choose the folder and the file and click <strong>Load Station</strong>. This reads the file: a syntax error
+(wrong indentation, a missing colon) is shown under the buttons, and the instruments appear in <em>Instruments to Load</em>.</p></li>
+<li><p>Select an instrument and click <strong>Load Selected Instruments</strong>. This imports the driver and connects: an error here, shown
+under the <em>Connected instruments</em> list, usually comes from the <code class="docutils literal notranslate"><span class="pre">type</span></code> (a typo in the path, a package that is not
+installed) or from <code class="docutils literal notranslate"><span class="pre">init</span></code> (a wrong address or serial number).</p></li>
+<li><p>Open the Parameter explorer and check that your aliases are listed as experiment parameters, with the right safe range and
+maximum ramp rate.</p></li>
+</ol>
+</section>
+<section id="common-problems">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">Common problems</a><a class="headerlink" href="#common-problems" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt>The file is not listed</dt><dd><p>Its name does not end with <code class="docutils literal notranslate"><span class="pre">.station.yaml</span></code>, or it is not in the folder you chose.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Another</span> <span class="pre">instrument</span> <span class="pre">has</span> <span class="pre">the</span> <span class="pre">name</span></code> when loading</dt><dd><p>A previous session left the instrument open. Add <code class="docutils literal notranslate"><span class="pre">enable_forced_reconnect:</span> <span class="pre">true</span></code> to its entry.</p>
+</dd>
+<dt>An alias is missing from the experiment parameters</dt><dd><p>Its <code class="docutils literal notranslate"><span class="pre">source</span></code> path is wrong (the instrument was loaded but the alias could not be built), or you removed it from the
+Parameter explorer; the <strong>Restore parameters from the station file</strong> button brings it back.</p>
+</dd>
+<dt>The instrument loads but does not answer</dt><dd><p>The address is wrong or another program (or a second instance of mesoscoPy) is using the instrument. The coloured dot next
+to it in the Instruments tab turns red.</p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="quickstart.html" class="btn btn-neutral float-left" title="Quick overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tabs/data.html" class="btn btn-neutral float-right" title="Data tab" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

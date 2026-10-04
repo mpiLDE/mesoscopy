@@ -1,0 +1,228 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monitor tab &mdash; mesoscoPy documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=938c9ccc"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Settings and About" href="../program/settings.html" />
+    <link rel="prev" title="Queue tab" href="queue.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            mesoscoPy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../station_file.html">Building the station file</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The tabs</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="data.html">Data tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruments.html">Instruments tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parameter_explorer.html">Parameter explorer tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="measurement.html">Measurement tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="queue.html">Queue tab</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Monitor tab</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#choosing-what-to-monitor">Choosing what to monitor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-table">The table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reading">Reading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#time-traces">Time traces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#alarms">Alarms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-log-file">The log file</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The whole program</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../program/settings.html">Settings and About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../program/safety.html">Safety</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../program/roadmap.html">Limitations and roadmap</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">More</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">mesoscoPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Monitor tab</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/mpilde/mesoscopy/blob/main/docs/tabs/monitor.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="monitor-tab">
+<span id="monitor"></span><h1>Monitor tab<a class="headerlink" href="#monitor-tab" title="Link to this heading"></a></h1>
+<p>The Monitor tab <strong>watches parameters over time</strong>: a temperature, a magnetic field, the current through a gate leak. It reads
+them regularly, shows their time traces, raises alarms when a value gets too close to its limits, and keeps a log file of
+the values on disk. It opens as soon as one parameter is monitored or has an alarm.</p>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/monitor_tab.png"><img alt="The Monitor tab with three monitored parameters, their time traces and an alarm" src="../_images/monitor_tab.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Three monitored parameters with their time traces. An alarm on the top gate has gone off (the red label in the status bar).</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<nav class="contents local" id="on-this-page">
+<p class="topic-title">On this page</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#choosing-what-to-monitor" id="id2">Choosing what to monitor</a></p></li>
+<li><p><a class="reference internal" href="#the-table" id="id3">The table</a></p></li>
+<li><p><a class="reference internal" href="#reading" id="id4">Reading</a></p></li>
+<li><p><a class="reference internal" href="#time-traces" id="id5">Time traces</a></p></li>
+<li><p><a class="reference internal" href="#alarms" id="id6">Alarms</a></p></li>
+<li><p><a class="reference internal" href="#the-log-file" id="id7">The log file</a></p></li>
+</ul>
+</nav>
+<section id="choosing-what-to-monitor">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Choosing what to monitor</a><a class="headerlink" href="#choosing-what-to-monitor" title="Link to this heading"></a></h2>
+<p>In <a class="reference internal" href="parameter_explorer.html#parameter-explorer"><span class="std std-ref">the Parameter explorer</span></a>, select a parameter (an instrument parameter or an experiment parameter)
+and click <strong>Monitor</strong>, or right-click it and choose <strong>Monitor</strong>. It is read at once and added to the table of the Monitor tab.
+To stop monitoring a parameter, click the <strong>✕</strong> at the end of its row, or right-click it and choose <strong>Remove from monitor</strong>.</p>
+</section>
+<section id="the-table">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">The table</a><a class="headerlink" href="#the-table" title="Link to this heading"></a></h2>
+<p>For each parameter, its <strong>value</strong> with the unit, the time it was <strong>updated</strong>, and a box <strong>Show time trace</strong>: tick it to draw
+the parameter in the <em>Time traces</em> box on the right (parameters whose value is not a number have no trace).</p>
+</section>
+<section id="reading">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Reading</a><a class="headerlink" href="#reading" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt><strong>Monitoring</strong></dt><dd><p>Tick it to read the parameters periodically, <em>every N s</em> (from 1 s to 1 hour, 5 s by default). <strong>Refresh now</strong> reads them at
+once.</p>
+</dd>
+</dl>
+<p>The parameters of different instruments are read at the same time, one after the other within an instrument. An instrument that
+is in use (a ramp, a user action) is skipped and read at the next tick.</p>
+<p><strong>While a measurement runs, the Monitor does not read the instruments itself</strong>: the measurement hands it the values, at most once
+per period, at the end of a point. The period can then not be shorter than a point. A message in the tab says so.</p>
+</section>
+<section id="time-traces">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Time traces</a><a class="headerlink" href="#time-traces" title="Link to this heading"></a></h2>
+<p>The <em>Time traces</em> box draws the ticked parameters, two per row. <strong>Duration</strong> sets the time shown by every trace, from 1 minute
+to 24 hours (10 minutes by default; above an hour the time axis is in hours). The traces keep the readings of the last 24 hours,
+so you can widen the window afterwards.</p>
+<p>The same traces, without axes, are drawn as small <strong>sparklines in the status bar</strong>, visible from every tab: hover over one for
+its last value and its range. <em>Settings</em>, <em>Status bar</em> chooses how many are shown (up to 12) and over what duration.</p>
+</section>
+<section id="alarms">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Alarms</a><a class="headerlink" href="#alarms" title="Link to this heading"></a></h2>
+<p>An alarm watches a parameter against the <strong>limits it allows</strong>: the range of its validator, which is the safe limits of an
+experiment parameter, the limits given in the station file, or the range of the driver itself. A parameter without limits cannot
+have an alarm. In the Parameter explorer, right-click a parameter and choose <strong>Add alarm</strong> (<strong>Remove alarm</strong> to take it
+away). It goes off when the value reaches a percentage of the allowed range, <strong>90 %</strong> by default: for limits of ±2 V it goes
+off at 1.8 V. If the limits are not symmetric, each side has its own threshold.</p>
+<p><em>Settings</em>, <em>Alarms</em> chooses the percentage and the <strong>action</strong>:</p>
+<ul class="simple">
+<li><p>only show a message in the status bar;</p></li>
+<li><p><strong>pause</strong> the measurement (after the current point);</p></li>
+<li><p><strong>stop</strong> the measurement;</p></li>
+<li><p><strong>stop and ramp to 0</strong>.</p></li>
+</ul>
+<p>Whatever the action, the alarm is shown in the <strong>status bar</strong> as a red label (click it to open this tab), listed in the
+<em>Alarms</em> box of this tab for the session (<em>Time</em>, <em>Parameter</em>, <em>Value</em>, <em>Limit</em>, <em>Action</em>), and written to the log as a
+<code class="docutils literal notranslate"><span class="pre">WARNING</span></code>. <strong>Clear alarm history</strong> empties the list; the log keeps the warnings. An alarm goes off once when the value crosses
+the threshold, and again only after it came back inside.</p>
+<p>During a measurement the alarms are checked at every point on the values the measurement just read or set; the other alarmed
+parameters are read about once a second.</p>
+</section>
+<section id="the-log-file">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">The log file</a><a class="headerlink" href="#the-log-file" title="Link to this heading"></a></h2>
+<p><strong>Log to file</strong> (ticked by default) writes the monitored values to a file in the <strong>logs folder</strong> of the Data tab:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">monitor_&lt;database&gt;_&lt;yyyymmdd&gt;.log</span></code></dt><dd><p>For example <code class="docutils literal notranslate"><span class="pre">monitor_Hall_bar_00_20261003.log</span></code>.</p>
+</dd>
+</dl>
+<p>It is a text file with <strong>tab-separated columns</strong>: the first is the time (<code class="docutils literal notranslate"><span class="pre">2026-10-03</span> <span class="pre">14:25:30</span></code>) and there is one column for each
+monitored parameter, in the order of the table. A row is written <strong>once per duration of the time traces</strong> (every 10 minutes
+by default), from the readings the Monitor already has, so the log costs nothing. A parameter that has not been read yet is left
+empty.</p>
+<p>A <strong>new file</strong> is started whenever the database changes, a monitored parameter is added or removed, or the logs folder changes,
+since the columns would no longer match. If a file of the same name and with the same columns already exists (you restarted the
+program), the rows are added to it; if it has other columns, the new file gets the time in its name too
+(<code class="docutils literal notranslate"><span class="pre">monitor_Hall_bar_00_20261003_142530.log</span></code>). Nothing is overwritten.</p>
+<p>Without a logs folder, the file goes to QCoDeS’ default log folder. Nothing is written while <strong>Monitoring</strong> is unticked.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="queue.html" class="btn btn-neutral float-left" title="Queue tab" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../program/settings.html" class="btn btn-neutral float-right" title="Settings and About" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

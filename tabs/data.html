@@ -1,0 +1,268 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data tab &mdash; mesoscoPy documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=938c9ccc"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Instruments tab" href="instruments.html" />
+    <link rel="prev" title="Building the station file" href="../station_file.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            mesoscoPy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../station_file.html">Building the station file</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The tabs</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Data tab</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#database-and-experiment-info">Database and Experiment Info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logs">Logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-experiment-explorer">The Experiment Explorer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tags-and-notes">Tags and notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comparing-two-runs">Comparing two runs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#loading-a-snapshot">Loading a snapshot</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="instruments.html">Instruments tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parameter_explorer.html">Parameter explorer tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="measurement.html">Measurement tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="queue.html">Queue tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monitor.html">Monitor tab</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The whole program</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../program/settings.html">Settings and About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../program/safety.html">Safety</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../program/roadmap.html">Limitations and roadmap</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">More</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">mesoscoPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Data tab</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/mpilde/mesoscopy/blob/main/docs/tabs/data.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="data-tab">
+<span id="data"></span><h1>Data tab<a class="headerlink" href="#data-tab" title="Link to this heading"></a></h1>
+<p>The Data tab is the first one. It says <strong>where the data goes</strong> (the database folder and the sample), where the <strong>QCoDeS log</strong>
+is written, and it is the <strong>explorer</strong> of everything that was measured: experiments, runs, tags and notes.</p>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/data_tab.png"><img alt="The Data tab with a database folder, a sample name and a logs folder" src="../_images/data_tab.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">The Data tab, with the database folder, the sample name and the logs folder filled in.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<nav class="contents local" id="on-this-page">
+<p class="topic-title">On this page</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#database-and-experiment-info" id="id4">Database and Experiment Info</a></p></li>
+<li><p><a class="reference internal" href="#logs" id="id5">Logs</a></p></li>
+<li><p><a class="reference internal" href="#the-experiment-explorer" id="id6">The Experiment Explorer</a></p></li>
+</ul>
+</nav>
+<section id="database-and-experiment-info">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Database and Experiment Info</a><a class="headerlink" href="#database-and-experiment-info" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt><em>Database folder</em></dt><dd><p>The folder where the databases are kept. Choose it with <strong>Browse…</strong>.</p>
+</dd>
+<dt><em>Sample name</em></dt><dd><p>The name of the sample you are measuring. Databases are named after it: <code class="docutils literal notranslate"><span class="pre">&lt;sample&gt;_&lt;NN&gt;.db</span></code>, with <code class="docutils literal notranslate"><span class="pre">NN</span></code> two digits, for
+example <code class="docutils literal notranslate"><span class="pre">Hall_bar_00.db</span></code>. Spaces and other unsafe characters become <code class="docutils literal notranslate"><span class="pre">_</span></code>. You never type a database name.</p>
+</dd>
+<dt><em>Database file</em></dt><dd><p>The database the next measurement is written to. It lists the existing databases of the folder; the empty entry means <em>a
+new database</em>, which is created when the first measurement starts. Selecting an existing database lets you continue in it.</p>
+</dd>
+<dt><em>Database size</em></dt><dd><p>The size of the selected database. A database that grows above <strong>750 MB</strong> is closed: the next measurement starts the next
+one of the series (<code class="docutils literal notranslate"><span class="pre">Hall_bar_01.db</span></code>). This keeps every file small enough to copy, back up and open quickly.</p>
+</dd>
+<dt><strong>Upgrade database</strong></dt><dd><p>Starts the next database of the series now, whatever the size of the current one, for instance when you change something in
+the setup and want a clean file. It is not available while a measurement runs.</p>
+</dd>
+</dl>
+<p>The Instruments tab opens as soon as a database folder and a sample name (or an existing database) are given.</p>
+</section>
+<section id="logs">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Logs</a><a class="headerlink" href="#logs" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt><em>Logs folder</em></dt><dd><p>The folder for the log files. The QCoDeS log (every command sent to an instrument, warnings, errors) is written there, and
+so are the log files of <a class="reference internal" href="monitor.html#monitor"><span class="std std-ref">the Monitor</span></a>.</p>
+</dd>
+<dt><strong>Start logging</strong></dt><dd><p>Starts the QCoDeS logger with its file in that folder. Do it at the beginning of a session: the log is the first place to
+look when an instrument behaves strangely.</p>
+</dd>
+<dt><strong>View Logs</strong></dt><dd><p>Opens the log viewer: pick a file, filter by instrument, by minimum level (errors included) and by text, and select a record
+to read all of it, traceback included.</p>
+</dd>
+</dl>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="../_images/data_log_viewer.png"><img alt="The log viewer" src="../_images/data_log_viewer.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">The log viewer.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="the-experiment-explorer">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">The Experiment Explorer</a><a class="headerlink" href="#the-experiment-explorer" title="Link to this heading"></a></h2>
+<p>Below the database information, the explorer lists what is in the selected database. Choose an <strong>experiment</strong> (the <em>Experiment
+Name</em> of the Measurement tab groups related measurements) and the table shows its runs:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ID</p></td>
+<td><p>the number of the run in the database</p></td>
+</tr>
+<tr class="row-odd"><td><p>Name</p></td>
+<td><p>the measurement name, with a coloured dot if the run is tagged, and the first line of its notes</p></td>
+</tr>
+<tr class="row-even"><td><p>Started</p></td>
+<td><p>the date and time the run started</p></td>
+</tr>
+<tr class="row-odd"><td><p>Status</p></td>
+<td><p><em>completed</em>, or <em>not completed</em> (a run that was interrupted)</p></td>
+</tr>
+<tr class="row-even"><td><p>Points</p></td>
+<td><p>the number of points written</p></td>
+</tr>
+</tbody>
+</table>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="../_images/data_explorer.png"><img alt="The experiment explorer with the runs of an experiment, two of them tagged" src="../_images/data_explorer.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">The experiment explorer. The first run is tagged green, the third red and has a note.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="tags-and-notes">
+<h3>Tags and notes<a class="headerlink" href="#tags-and-notes" title="Link to this heading"></a></h3>
+<p>Right-click a run to open its menu:</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/data_run_menu.png"><img alt="The menu of a run" src="../_images/data_run_menu.png" style="width: 40%;" />
+</a>
+</figure>
+<ul class="simple">
+<li><p>The row of six <strong>coloured dots</strong> is the <em>tag</em>: click a colour to tag the run, and click the same colour again to remove the
+tag. Use colours as you like, for instance green for good runs and red for bad ones.</p></li>
+<li><p><strong>Add notes… / Edit notes…</strong> opens a text box for free notes on the run; <strong>Delete note</strong> removes them.</p></li>
+<li><p><strong>Compare with another run</strong> and <strong>Load snapshot</strong>, below.</p></li>
+</ul>
+<p>Tags and notes are saved in the database, with the run, as QCoDeS metadata. They can also be changed from the live plot of the
+Measurement tab once a run has ended, and the table here follows.</p>
+</section>
+<section id="comparing-two-runs">
+<h3>Comparing two runs<a class="headerlink" href="#comparing-two-runs" title="Link to this heading"></a></h3>
+<p>Select a run and click <strong>Compare with another run</strong>, then pick a second run (from any database; it is only read). mesoscoPy
+shows what differs between the <em>snapshots</em> of the two runs: the values of the instruments, the definitions of the experiment
+parameters and the setup of the Measurement tab. It is the quickest way to find out what changed between a good run and a bad
+one.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/dialog_compare_runs.png"><img alt="The dialog to pick the second run" src="../_images/dialog_compare_runs.png" style="width: 80%;" />
+</a>
+</figure>
+</section>
+<section id="loading-a-snapshot">
+<h3>Loading a snapshot<a class="headerlink" href="#loading-a-snapshot" title="Link to this heading"></a></h3>
+<p>Every run stores a snapshot: the state of all the instruments and the setup at the moment it started. <strong>Load Snapshot</strong> brings
+a run’s setup back: it connects the instruments of the run, restores their settings and the experiment parameters, and fills
+the Measurement tab as it was. Nothing is run, and you review every change in a window before anything is written to an
+instrument. It is unavailable while a measurement runs, since it sets instruments.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../station_file.html" class="btn btn-neutral float-left" title="Building the station file" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="instruments.html" class="btn btn-neutral float-right" title="Instruments tab" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

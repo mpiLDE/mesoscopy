@@ -1,0 +1,500 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Measurement tab &mdash; mesoscoPy documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=938c9ccc"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Queue tab" href="queue.html" />
+    <link rel="prev" title="Parameter explorer tab" href="parameter_explorer.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            mesoscoPy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../station_file.html">Building the station file</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The tabs</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="data.html">Data tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruments.html">Instruments tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parameter_explorer.html">Parameter explorer tab</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Measurement tab</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#names">Names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sweeps">Sweeps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#more-axes">More axes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#repeat-back-and-forth-snake">Repeat, back and forth, snake</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#measured-parameters">Measured parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#before-you-run">Before you run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running">Running</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-live-plot">The live plot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-drawn">What is drawn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#filling-in-start-and-stop-from-the-plot">Filling in Start and Stop from the plot</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#advanced-settings">Advanced settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#actions">Actions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#waiting-helpers">Waiting helpers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pre-defined-actions">Pre-defined actions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#setpoints-and-datasets">Setpoints and datasets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run-options">Run options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-written">What is written</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="queue.html">Queue tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monitor.html">Monitor tab</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The whole program</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../program/settings.html">Settings and About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../program/safety.html">Safety</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../program/roadmap.html">Limitations and roadmap</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">More</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">mesoscoPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Measurement tab</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/mpilde/mesoscopy/blob/main/docs/tabs/measurement.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="measurement-tab">
+<span id="measurement"></span><h1>Measurement tab<a class="headerlink" href="#measurement-tab" title="Link to this heading"></a></h1>
+<p>The Measurement tab is where you set up a <strong>sweep</strong> of one to four parameters, choose what to <strong>measure</strong>, run it, and watch
+it in the <strong>live plot</strong>. It runs your setup with QCoDeS’ <code class="docutils literal notranslate"><span class="pre">dond</span></code> function, and writes the data to the database.</p>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/measurement_tab.png"><img alt="The Measurement tab, ready to run a one-dimensional sweep" src="../_images/measurement_tab.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">The Measurement tab. On the left, the names, the sweep and the measured parameters; on the right, the live plot.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<nav class="contents local" id="on-this-page">
+<p class="topic-title">On this page</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#names" id="id3">Names</a></p></li>
+<li><p><a class="reference internal" href="#sweeps" id="id4">Sweeps</a></p>
+<ul>
+<li><p><a class="reference internal" href="#more-axes" id="id5">More axes</a></p></li>
+<li><p><a class="reference internal" href="#repeat-back-and-forth-snake" id="id6">Repeat, back and forth, snake</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#measured-parameters" id="id7">Measured parameters</a></p></li>
+<li><p><a class="reference internal" href="#before-you-run" id="id8">Before you run</a></p></li>
+<li><p><a class="reference internal" href="#running" id="id9">Running</a></p></li>
+<li><p><a class="reference internal" href="#the-live-plot" id="id10">The live plot</a></p>
+<ul>
+<li><p><a class="reference internal" href="#what-is-drawn" id="id11">What is drawn</a></p></li>
+<li><p><a class="reference internal" href="#filling-in-start-and-stop-from-the-plot" id="id12">Filling in Start and Stop from the plot</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#advanced-settings" id="id13">Advanced settings</a></p>
+<ul>
+<li><p><a class="reference internal" href="#actions" id="id14">Actions</a></p></li>
+<li><p><a class="reference internal" href="#setpoints-and-datasets" id="id15">Setpoints and datasets</a></p></li>
+<li><p><a class="reference internal" href="#run-options" id="id16">Run options</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#what-is-written" id="id17">What is written</a></p></li>
+</ul>
+</nav>
+<section id="names">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Names</a><a class="headerlink" href="#names" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt><em>Experiment Name</em></dt><dd><p>Groups related measurements in the database. Pick an existing experiment of the database folder from the list, or type a new
+name; if you leave it empty the experiment is called <code class="docutils literal notranslate"><span class="pre">Sweep</span></code>.</p>
+</dd>
+<dt><em>Measurement name</em></dt><dd><p>The name of this measurement. It is required: <strong>Run</strong> stays disabled until there is one. With several repetitions, the
+runs get <code class="docutils literal notranslate"><span class="pre">[1/3]</span></code>, <code class="docutils literal notranslate"><span class="pre">[2/3]</span></code> … after it.</p>
+</dd>
+</dl>
+</section>
+<section id="sweeps">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Sweeps</a><a class="headerlink" href="#sweeps" title="Link to this heading"></a></h2>
+<p>A sweep box describes one axis. Under <em>Sweep class</em> choose how the values are made:</p>
+<dl>
+<dt><strong>LinSweep</strong></dt><dd><p><em>Start</em> to <em>Stop</em> in <em>Num points</em> equal steps.</p>
+</dd>
+<dt><strong>LogSweep</strong></dt><dd><p>The same with logarithmic steps; <em>Start</em> and <em>Stop</em> are the real values and must be above 0.</p>
+</dd>
+<dt><strong>ArraySweep</strong></dt><dd><p>The values come from a Python expression, such as <code class="docutils literal notranslate"><span class="pre">np.linspace(0,</span> <span class="pre">1,</span> <span class="pre">101)</span></code> or
+<code class="docutils literal notranslate"><span class="pre">np.concatenate((np.linspace(0,</span> <span class="pre">1,</span> <span class="pre">51),</span> <span class="pre">np.linspace(1,</span> <span class="pre">0,</span> <span class="pre">51)))</span></code>. NumPy is available as <code class="docutils literal notranslate"><span class="pre">np</span></code>. The number of points is
+shown next to the field.</p>
+</dd>
+<dt><strong>TogetherSweep</strong></dt><dd><p>Two parameters swept at the same time, with a start and a stop for each and one number of points. They take their <em>n</em>-th
+value together, which is how you sweep a top gate and a back gate along a line of constant displacement field.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/sweep_together.png"><img alt="A TogetherSweep box" src="../_images/sweep_together.png" style="width: 100%;" />
+</a>
+</figure>
+</dd>
+<dt><em>Sweep component</em></dt><dd><p>The experiment parameter to sweep. The selector walks the list of experiment parameters (only those that can be set are
+offered). If the selected parameter has safe limits, the sweep must stay inside them.</p>
+</dd>
+<dt><em>Delay (s)</em></dt><dd><p>The time to wait at each point, after the parameter is set and before the measured parameters are read. It is added to the
+time the parameter needs to ramp and the instruments need to answer.</p>
+</dd>
+</dl>
+<section id="more-axes">
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">More axes</a><a class="headerlink" href="#more-axes" title="Link to this heading"></a></h3>
+<p><strong>Add dimension (n/4)</strong> adds a new <strong>outermost</strong> (slowest) axis, up to four; <strong>Remove dimension</strong> removes the outermost one. The
+last box is the innermost (fastest) axis: it is swept completely for every value of the axes outside it. A two-dimensional map
+of a gate against another gate is two boxes.</p>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="../_images/measurement_2d.png"><img alt="A two-dimensional sweep and its live plot" src="../_images/measurement_2d.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">A two-dimensional sweep (a <em>snake</em> sweep, see below) and its live plot: every curve is one sweep of the inner axis.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="repeat-back-and-forth-snake">
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">Repeat, back and forth, snake</a><a class="headerlink" href="#repeat-back-and-forth-snake" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt><strong>Repeat</strong> <em>N</em> <strong>times</strong></dt><dd><p>Runs the whole measurement several times, one after the other. Each repetition is a run of its own in the database.</p>
+</dd>
+<dt><strong>Sweep back and forth</strong></dt><dd><p>With one axis and repetitions: every other repetition sweeps backwards, so the up and the down sweeps are separate runs.</p>
+</dd>
+<dt><strong>Snake sweep</strong></dt><dd><p>With two axes: the inner axis goes back and forth on every other pass of the outer axis, instead of jumping back to its
+start. It saves the time of the return ramp. The database holds the real values, in the order they were swept.</p>
+</dd>
+</dl>
+<p>With no sweep axis at all (<em>Remove dimension</em> down to none) the measured parameters are acquired once: the way to record a
+trace.</p>
+</section>
+</section>
+<section id="measured-parameters">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Measured parameters</a><a class="headerlink" href="#measured-parameters" title="Link to this heading"></a></h2>
+<p>The <em>Measured Parameters</em> box lists what is recorded at every point. Click <strong>Add parameter…</strong> and pick an experiment parameter
+(only parameters that can be read are offered):</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/dialog_measured_parameter.png"><img alt="The dialog to add a measured parameter" src="../_images/dialog_measured_parameter.png" style="width: 60%;" />
+</a>
+</figure>
+<dl class="simple">
+<dt><em>Alias</em></dt><dd><p>Optional: the name the parameter gets in the dataset. Left empty, it keeps its own name. A trace is always saved under its
+own name, with its axis.</p>
+</dd>
+</dl>
+<p>Double-click an entry to edit it, drag to reorder, and press Delete to remove it. Measuring several parameters at each point
+is free: they are read together (in parallel for different instruments, if <em>Use threads</em> is on).</p>
+</section>
+<section id="before-you-run">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">Before you run</a><a class="headerlink" href="#before-you-run" title="Link to this heading"></a></h2>
+<dl>
+<dt><strong>Run (≈ time)</strong></dt><dd><p>The button shows an estimate of the duration: the delays, plus the time to ramp the swept parameters at their maximum ramp
+rate, repetitions included. The time the instruments take to answer is not included.</p>
+</dd>
+<dt><strong>Check setup</strong></dt><dd><p>A <em>dry run</em>: it looks at the measurement without touching an instrument and reports what it finds. It checks every swept
+value against the safe limits and validators, warns when a sweep reaches an alarm, when a parameter has no ramp rate for
+its first move, when the disk is nearly full or the grid is huge, and gives the estimated duration:</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/dialog_check_setup.png"><img alt="The Check setup report" src="../_images/dialog_check_setup.png" style="width: 70%;" />
+</a>
+</figure>
+<p>A sweep that leaves the safe limits is refused with the reason, and <strong>Run</strong> and the queue refuse it too:</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/dialog_check_setup_error.png"><img alt="A sweep beyond the safe limits is refused" src="../_images/dialog_check_setup_error.png" style="width: 70%;" />
+</a>
+</figure>
+</dd>
+<dt><strong>Stop on breakout conditions</strong></dt><dd><p>Ends the measurement cleanly as soon as a breakout condition of an experiment parameter is true (defined in
+<a class="reference internal" href="parameter_explorer.html#parameter-explorer"><span class="std std-ref">the Parameter explorer</span></a>). With several conditions, <em>Settings</em>, <em>Measurement</em> chooses whether any
+one or all of them must be true.</p>
+</dd>
+<dt><strong>Ramp to 0 when finished</strong></dt><dd><p>When the measurement ends (by itself, on a breakout condition, or with Stop) every swept parameter is brought to 0 at its
+maximum ramp rate.</p>
+</dd>
+<dt><strong>Add to queue</strong></dt><dd><p>Adds this setup, as a <em>recipe</em>, to the <a class="reference internal" href="queue.html#queue"><span class="std std-ref">queue</span></a>.</p>
+</dd>
+</dl>
+</section>
+<section id="running">
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">Running</a><a class="headerlink" href="#running" title="Link to this heading"></a></h2>
+<p>Click <strong>Run</strong>. While the measurement runs, the buttons that would set or disconnect instruments are disabled, but the fields of
+this tab stay editable: use the time to prepare the next measurement; it does not change the run in progress.</p>
+<dl class="simple">
+<dt><strong>Pause</strong></dt><dd><p>Pauses after the current point, and <strong>Resume</strong> continues. The instruments stay as they are.</p>
+</dd>
+<dt><strong>Stop</strong></dt><dd><p>Ends the measurement cleanly after the current point; what was written stays in the database.</p>
+</dd>
+<dt><strong>Stop and ramp to 0</strong></dt><dd><p>Stops, then brings every swept parameter to 0 at its maximum ramp rate.</p>
+</dd>
+</dl>
+<p>A bar under each axis shows its progress. If an instrument stops answering, the measurement waits and retries a few times
+before it fails (see <a class="reference internal" href="../program/safety.html#safety"><span class="std std-ref">Safety</span></a>).</p>
+</section>
+<section id="the-live-plot">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">The live plot</a><a class="headerlink" href="#the-live-plot" title="Link to this heading"></a></h2>
+<p>The plot follows the run as the data is written: QCoDeS hands it the new points, and the database is not read again and
+again, so the plot costs the measurement almost nothing.
+Above it, the run number and name, the <em>Elapsed time</em> and the <em>Remaining time</em> (estimated from the pace of the points).</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/measurement_1d.png"><img alt="The live plot of a one-dimensional sweep" src="../_images/measurement_1d.png" style="width: 100%;" />
+</a>
+</figure>
+<p>Below the plot:</p>
+<dl class="simple">
+<dt><em>X axis</em>, <em>Y axis</em></dt><dd><p>Any swept or measured parameter can be plotted against any other. The number to the right is a <strong>multiplication factor</strong>,
+to plot in other units (<code class="docutils literal notranslate"><span class="pre">1e3</span></code> for mV).</p>
+</dd>
+<dt><strong>∂y/∂x</strong></dt><dd><p>Plots the derivative of y with respect to x, for every curve.</p>
+</dd>
+<dt><strong>Refresh</strong> and <strong>Refresh automatically every N s</strong></dt><dd><p>The plot is redrawn at that period (1 s to 1 hour); the button redraws at once. Nothing is redrawn while the tab is hidden, or
+when nothing changed.</p>
+</dd>
+<dt><em>Past curves</em></dt><dd><p>How many earlier curves are drawn faded behind the current one. For a one-dimensional run it is the previous runs of the same
+experiment that measured the same parameters; for a map it is the previous sweeps of the same run.</p>
+</dd>
+</dl>
+<section id="what-is-drawn">
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">What is drawn</a><a class="headerlink" href="#what-is-drawn" title="Link to this heading"></a></h3>
+<ul>
+<li><p>A one-dimensional run is one curve, with the faded curves of earlier runs behind it.</p></li>
+<li><p>A map is drawn as the <strong>latest sweep of the inner axis</strong> (dots) with the previous sweeps faded behind it. Choose another y
+parameter to look at the other measured values.</p></li>
+<li><p>A <strong>trace</strong> (an array read at each point) is one curve per reading, against its own axis, newest on top:</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/measurement_trace.png"><img alt="Traces measured while a gate is swept" src="../_images/measurement_trace.png" style="width: 100%;" />
+</a>
+</figure>
+<p>The scalar parameters measured in the same run are plotted as usual, against the swept parameter.</p>
+</li>
+<li><p>A <strong>complex</strong> parameter is drawn as its real part (blue) and its imaginary part (orange), with a legend.</p></li>
+</ul>
+<p>Points that are missing are skipped, so a curve is always one continuous line.</p>
+</section>
+<section id="filling-in-start-and-stop-from-the-plot">
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">Filling in Start and Stop from the plot</a><a class="headerlink" href="#filling-in-start-and-stop-from-the-plot" title="Link to this heading"></a></h3>
+<p>After a first sweep, you can set the range of the next one on the plot. Put the text cursor in the <strong>Start</strong> or <strong>Stop</strong> field of
+a sweep (a LinSweep, a LogSweep or a TogetherSweep). The field is <em>armed</em>: a blue note under the plot says so, and two vertical
+lines show the current Start (orange) and Stop (green).</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/measurement_markers.png"><img alt="The plot with the Start and Stop lines of the armed axis" src="../_images/measurement_markers.png" style="width: 100%;" />
+</a>
+</figure>
+<ul class="simple">
+<li><p><strong>Click</strong> the plot: the x value under the cursor goes into the armed field (the factor of the axis is taken out).</p></li>
+<li><p><strong>Drag</strong> sideways: the dragged range becomes both Start and Stop, in the direction of the drag.</p></li>
+<li><p><strong>Right-click</strong> the plot for the menu below.</p></li>
+</ul>
+<p>This only works when the x axis of the plot is the parameter that the armed field sweeps; otherwise a warning says so and
+nothing changes.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/plot_menu.png"><img alt="The right-click menu of the live plot" src="../_images/plot_menu.png" style="width: 55%;" />
+</a>
+</figure>
+<ul class="simple">
+<li><p><strong>Use x at the maximum / minimum of</strong> <em>y</em>, and <strong>of ∂y/∂x</strong>: fill the armed field with the position of the extremum of the
+curve (for a gate sweep, the position of a peak or of the steepest slope).</p></li>
+<li><p><strong>Set</strong> <em>parameter</em> <strong>safe maximum / minimum to</strong> <em>x</em>: sets a safe limit of the parameter on the x axis to the position of the
+cursor, after asking for confirmation. It is the same limit as in the Parameter explorer.</p></li>
+<li><p>Once the run has ended: the <strong>tag</strong> dots and <strong>notes</strong> of the run, as in <a class="reference internal" href="data.html#data"><span class="std std-ref">the Data tab</span></a>.</p></li>
+</ul>
+<p>When a measurement writes several datasets (see below), a <em>Dataset</em> selector above the plot chooses which one is drawn.</p>
+</section>
+</section>
+<section id="advanced-settings">
+<h2><a class="toc-backref" href="#id13" role="doc-backlink">Advanced settings</a><a class="headerlink" href="#advanced-settings" title="Link to this heading"></a></h2>
+<p><strong>Advanced settings…</strong> opens a window with the options of <code class="docutils literal notranslate"><span class="pre">dond</span></code>. The button shows how many of them differ from the
+defaults. The settings are part of the setup: they are saved with recipes and snapshots.</p>
+<section id="actions">
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">Actions</a><a class="headerlink" href="#actions" title="Link to this heading"></a></h3>
+<p>An <strong>action</strong> is a few lines of Python that run at a given moment of the measurement. The page <em>Actions</em> has two lists:</p>
+<dl class="simple">
+<dt><em>Before the measurement starts</em></dt><dd><p>Run once, before the first point (the <code class="docutils literal notranslate"><span class="pre">enter_actions</span></code> of <code class="docutils literal notranslate"><span class="pre">dond</span></code>).</p>
+</dd>
+<dt><em>After the measurement ends</em></dt><dd><p>Run once, after the last point, also when the measurement was stopped (the <code class="docutils literal notranslate"><span class="pre">exit_actions</span></code>).</p>
+</dd>
+</dl>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/advanced_actions.png"><img alt="The Actions page of the advanced settings" src="../_images/advanced_actions.png" style="width: 100%;" />
+</a>
+</figure>
+<p>The page <em>Axes</em> has, for each sweep axis, a list of actions that run <strong>after each point of that axis</strong> is set, before the delay
+and before the inner loop (the <code class="docutils literal notranslate"><span class="pre">post_actions</span></code>), and a box <em>Read the parameter back after setting it</em>, which stores the value
+read instead of the value set.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/advanced_axes.png"><img alt="The Axes page of the advanced settings" src="../_images/advanced_axes.png" style="width: 100%;" />
+</a>
+</figure>
+<p>An action is Python code run as it is (there is no sandbox). It can use every experiment parameter by name (<code class="docutils literal notranslate"><span class="pre">Vtop()</span></code> reads it,
+<code class="docutils literal notranslate"><span class="pre">Vtop(0.5)</span></code> sets it, with its limits and ramp rate), <code class="docutils literal notranslate"><span class="pre">station</span></code>, <code class="docutils literal notranslate"><span class="pre">np</span></code>, <code class="docutils literal notranslate"><span class="pre">time</span></code>, <code class="docutils literal notranslate"><span class="pre">const</span></code> and the waiting helpers below.
+The actions of one measurement share their variables. <strong>Check</strong> compiles the selected action and shows its first error.</p>
+<section id="waiting-helpers">
+<h4>Waiting helpers<a class="headerlink" href="#waiting-helpers" title="Link to this heading"></a></h4>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">wait(seconds)</span></code></dt><dd><p>Waits that long, like <code class="docutils literal notranslate"><span class="pre">time.sleep</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">wait_until(condition,</span> <span class="pre">timeout=None)</span></code></dt><dd><p>Waits until <code class="docutils literal notranslate"><span class="pre">condition()</span></code> is true, for example <code class="docutils literal notranslate"><span class="pre">wait_until(lambda:</span> <span class="pre">Vtop()</span> <span class="pre">&gt;</span> <span class="pre">0.1,</span> <span class="pre">timeout=600)</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">wait_below(parameter,</span> <span class="pre">value,</span> <span class="pre">timeout=None)</span></code>, <code class="docutils literal notranslate"><span class="pre">wait_above(parameter,</span> <span class="pre">value,</span> <span class="pre">timeout=None)</span></code></dt><dd><p>Wait until the parameter reads below (above) the value.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">wait_stable(parameter,</span> <span class="pre">tol,</span> <span class="pre">dwell,</span> <span class="pre">target=None,</span> <span class="pre">timeout=None)</span></code></dt><dd><p>Waits until the parameter stays within <code class="docutils literal notranslate"><span class="pre">tol</span></code> for <code class="docutils literal notranslate"><span class="pre">dwell</span></code> seconds: all the readings within ± <code class="docutils literal notranslate"><span class="pre">tol</span></code> of <code class="docutils literal notranslate"><span class="pre">target</span></code> if one is
+given, otherwise spread over no more than <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">×</span> <span class="pre">tol</span></code> (a drift or a ripple that small).</p>
+</dd>
+</dl>
+<p>Unlike <code class="docutils literal notranslate"><span class="pre">time.sleep</span></code> and a loop of your own, the helpers end at once when you press <strong>Stop</strong>, give up after <code class="docutils literal notranslate"><span class="pre">timeout</span></code> seconds
+(the measurement then fails, which is better than waiting for ever), show in the status bar what they wait for and the current
+value, and leave the clocks of the run standing still while they wait.</p>
+</section>
+<section id="pre-defined-actions">
+<h4>Pre-defined actions<a class="headerlink" href="#pre-defined-actions" title="Link to this heading"></a></h4>
+<p><strong>Add pre-defined</strong> under each list adds a one-line action from a menu: a fixed wait, wait until a parameter is below, above or
+stable, wait until it has reached a value and is stable, or set a parameter to a value. For those that need a parameter, a
+drop-down lists the parameters it can use. The line can be edited afterwards and combined with code of your own.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/advanced_predefined.png"><img alt="The menu of pre-defined actions" src="../_images/advanced_predefined.png" style="width: 45%;" />
+</a>
+</figure>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/advanced_predefined_parameters.png"><img alt="The list of parameters for a pre-defined action" src="../_images/advanced_predefined_parameters.png" style="width: 35%;" />
+</a>
+</figure>
+</section>
+</section>
+<section id="setpoints-and-datasets">
+<h3><a class="toc-backref" href="#id15" role="doc-backlink">Setpoints and datasets</a><a class="headerlink" href="#setpoints-and-datasets" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt><em>Additional setpoints</em></dt><dd><p>Experiment parameters that are read once before the sweep and stored with every point as extra coordinates of the dataset
+(a temperature, a field …). They are not swept.</p>
+</dd>
+<dt><em>Write several datasets</em></dt><dd><p>Each dataset is a run of its own, with the measured parameters you tick and the setpoints they depend on. Use it to separate,
+for example, the DC and the AC measurements of the same sweep. Each dataset must depend on at least one parameter of every
+axis and on every additional setpoint.</p>
+</dd>
+</dl>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/advanced_datasets.png"><img alt="The Setpoints and datasets page" src="../_images/advanced_datasets.png" style="width: 100%;" />
+</a>
+</figure>
+</section>
+<section id="run-options">
+<h3><a class="toc-backref" href="#id16" role="doc-backlink">Run options</a><a class="headerlink" href="#run-options" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt><em>Write period (s)</em></dt><dd><p>Seconds between two writes of the data to the database (0.5 by default). A shorter period means the live plot sees the data
+sooner and a crash loses less; a longer one writes less often.</p>
+</dd>
+<dt><em>Use threads</em></dt><dd><p>Reads the measured parameters of different instruments at the same time. The parameters of one instrument are still read one
+after the other.</p>
+</dd>
+<dt><em>In-memory cache</em></dt><dd><p>Keeps the data in memory too (faster plotting, more memory). Switch it off for very large traces.</p>
+</dd>
+<dt><em>Log message</em></dt><dd><p>A message written to the QCoDeS log when the measurement starts.</p>
+</dd>
+<dt><em>Export the data after each run</em>, <em>Export format</em>, <em>Export folder</em></dt><dd><p>Uses QCoDeS’ automatic export (<code class="docutils literal notranslate"><span class="pre">dataset.export_automatic</span></code>) for this measurement only: <em>Default</em> follows the QCoDeS
+configuration (<em>Settings</em>, <em>QCoDeS</em>), <em>Yes</em> and <em>No</em> override it. The formats are CSV and NetCDF; by default the files go to a
+folder named after the database, next to it.</p>
+</dd>
+<dt><em>Save the plots after each run</em></dt><dd><p>Plots each dataset with <code class="docutils literal notranslate"><span class="pre">qcodes.dataset.plot_dataset</span></code> and saves <code class="docutils literal notranslate"><span class="pre">plot_&lt;run&gt;_&lt;name&gt;.png</span></code> (or <code class="docutils literal notranslate"><span class="pre">.pdf</span></code>, <code class="docutils literal notranslate"><span class="pre">.svg</span></code>) in the
+export folder, also when the run was stopped, if it wrote data.</p>
+</dd>
+</dl>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/advanced_run_options.png"><img alt="The Run options page" src="../_images/advanced_run_options.png" style="width: 100%;" />
+</a>
+</figure>
+</section>
+</section>
+<section id="what-is-written">
+<h2><a class="toc-backref" href="#id17" role="doc-backlink">What is written</a><a class="headerlink" href="#what-is-written" title="Link to this heading"></a></h2>
+<p>Every run is a QCoDeS dataset in the database of the Data tab, with the setpoints (the swept parameters) and the measured
+parameters, under the names you gave them. Its <strong>snapshot</strong> holds the state of all the instruments, the definitions of the
+experiment parameters and the setup of this tab at the moment the run started, so that a run can always be understood and
+repeated later (see <a class="reference internal" href="data.html#data"><span class="std std-ref">the Data tab</span></a>).</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="parameter_explorer.html" class="btn btn-neutral float-left" title="Parameter explorer tab" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="queue.html" class="btn btn-neutral float-right" title="Queue tab" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

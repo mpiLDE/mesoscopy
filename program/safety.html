@@ -1,0 +1,216 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Safety &mdash; mesoscoPy documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=938c9ccc"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Limitations and roadmap" href="roadmap.html" />
+    <link rel="prev" title="Settings and About" href="settings.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            mesoscoPy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../station_file.html">Building the station file</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The tabs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tabs/data.html">Data tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tabs/instruments.html">Instruments tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tabs/parameter_explorer.html">Parameter explorer tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tabs/measurement.html">Measurement tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tabs/queue.html">Queue tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tabs/monitor.html">Monitor tab</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The whole program</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="settings.html">Settings and About</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Safety</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#before-you-start">Before you start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#while-it-runs">While it runs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#when-something-goes-wrong">When something goes wrong</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-mesoscopy-does-not-do">What mesoscoPy does not do</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Limitations and roadmap</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">More</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">mesoscoPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Safety</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/mpilde/mesoscopy/blob/main/docs/program/safety.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="safety">
+<span id="id1"></span><h1>Safety<a class="headerlink" href="#safety" title="Link to this heading"></a></h1>
+<p>A measurement of mesoscopic devices moves gates, sources and magnets for hours with nobody looking, and a sample can be lost to
+one wrong number. mesoscoPy protects the sample and the instruments in several layers. This page lists them in the order they
+act.</p>
+<nav class="contents local" id="on-this-page">
+<p class="topic-title">On this page</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#before-you-start" id="id2">Before you start</a></p></li>
+<li><p><a class="reference internal" href="#while-it-runs" id="id3">While it runs</a></p></li>
+<li><p><a class="reference internal" href="#when-something-goes-wrong" id="id4">When something goes wrong</a></p></li>
+<li><p><a class="reference internal" href="#what-mesoscopy-does-not-do" id="id5">What mesoscoPy does not do</a></p></li>
+</ul>
+</nav>
+<section id="before-you-start">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Before you start</a><a class="headerlink" href="#before-you-start" title="Link to this heading"></a></h2>
+<dl>
+<dt><strong>Safe limits and maximum ramp rates</strong></dt><dd><p>Every experiment parameter that can be set has <strong>safe limits</strong> and a <strong>maximum ramp rate</strong>, in the station file
+(<a class="reference internal" href="../station_file.html#station-file"><span class="std std-ref">limits, step and inter_delay</span></a>) or in the <a class="reference internal" href="../tabs/parameter_explorer.html#parameter-explorer"><span class="std std-ref">Parameter explorer</span></a>. A value outside
+the limits is refused whatever asks for it: a sweep, a set typed in the explorer, an action. Every change of the parameter is
+made in steps that never exceed the ramp rate.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/dialog_experiment_parameter.png"><img alt="The experiment parameter dialog with the safe limits and the maximum ramp rate" src="../_images/dialog_experiment_parameter.png" style="width: 55%;" />
+</a>
+</figure>
+</dd>
+<dt><strong>Presets that switch nothing on</strong></dt><dd><p>The presets of the station file are applied every time an instrument is loaded. Do not put the switch of an output (a source,
+a lock-in output) in them unless you are sure of what is connected.</p>
+</dd>
+<dt><strong>Check setup</strong></dt><dd><p><a class="reference internal" href="../tabs/measurement.html#measurement"><span class="std std-ref">The dry run of the Measurement tab</span></a> looks at a measurement before it starts: a sweep that leaves the safe
+limits is refused with the reason, a sweep that reaches the threshold of an alarm and a first move without ramp rate are
+reported. The same check runs before every manual run and every item of the queue, and a measurement that cannot work is not
+started.</p>
+</dd>
+</dl>
+</section>
+<section id="while-it-runs">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">While it runs</a><a class="headerlink" href="#while-it-runs" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt><strong>Alarms</strong></dt><dd><p>An alarm on a parameter goes off at a percentage of its allowed range (90 % by default) and can show a message, pause the
+measurement, stop it, or stop it and ramp to 0 (<a class="reference internal" href="../tabs/monitor.html#monitor"><span class="std std-ref">Monitor tab</span></a>, <em>Settings</em>, <em>Alarms</em>).</p>
+</dd>
+<dt><strong>Breakout conditions</strong></dt><dd><p>A condition on an experiment parameter (for example <em>the absolute value of the leakage current &gt; 1 nA</em>) ends the measurement
+cleanly when it becomes true.</p>
+</dd>
+<dt><strong>Pause, Stop, Stop and ramp to 0</strong></dt><dd><p>The buttons of the Measurement and Queue tabs. <strong>Stop</strong> ends after the current point and keeps the data; <strong>Stop and ramp to 0</strong>
+also brings the swept parameters to 0 at their ramp rate. A wait in an action or in a queue step ends at once on Stop.</p>
+</dd>
+<dt><strong>One thing at a time</strong></dt><dd><p>Measurements and your own actions on the instruments (setting a value, a raw command, loading a snapshot) never overlap: an
+action on an instrument that a measurement uses is refused, and a measurement does not start under a long ramp. Raw commands,
+which bypass the limits, are refused while a measurement runs.</p>
+</dd>
+<dt><strong>Instruments that do not answer</strong></dt><dd><p>When a read or a set fails during a measurement because the instrument did not answer (a VISA timeout, a lost connection), the
+measurement does not fail at once: it clears the instrument’s buffer and <strong>retries</strong>, waiting a little longer each time, a few
+times (<em>Settings</em>, <em>Measurement</em>: the number of retries and the first wait). The clocks of the run stand still, the status bar
+says what is happening, and <strong>Stop</strong> ends the wait. Errors that are not about communication, such as a value refused by a
+validator, are never retried.</p>
+</dd>
+</dl>
+</section>
+<section id="when-something-goes-wrong">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">When something goes wrong</a><a class="headerlink" href="#when-something-goes-wrong" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt><strong>A measurement fails</strong></dt><dd><p>A driver error ends the measurement. By default mesoscoPy then <strong>ramps to 0 the experiment parameters it had changed</strong>, each
+at its ramp rate. An instrument that does not answer is reported and left alone, and the others are ramped. Parameters that were
+never changed are not touched: there is no reason to ramp what was never moved. (<em>Settings</em>, <em>Measurement</em> switches this off.)</p>
+</dd>
+<dt><strong>You close the program</strong></dt><dd><p>A running measurement is stopped first, then the experiment parameters the program changed (and that are not at 0) are ramped
+to 0, with a progress window, and only then are the instruments disconnected.</p>
+</dd>
+<dt><strong>The program stops unexpectedly</strong></dt><dd><p>A crash or a power cut cannot ramp anything. The next start offers to restore the interrupted queue (see <a class="reference internal" href="../tabs/queue.html#queue"><span class="std std-ref">Queue tab</span></a>); the
+data written before the interruption is in the database. Check the state of your instruments before you run again: the
+gates are where they were left.</p>
+</dd>
+</dl>
+</section>
+<section id="what-mesoscopy-does-not-do">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">What mesoscoPy does not do</a><a class="headerlink" href="#what-mesoscopy-does-not-do" title="Link to this heading"></a></h2>
+<p>mesoscoPy cannot know what is connected to an instrument. It protects the values it sets through experiment parameters; a
+parameter that you set directly on the front panel of an instrument, or through another program, is outside its control. Check
+the limits of your sources, and the compliance of the current sources, on the instruments themselves as well.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="settings.html" class="btn btn-neutral float-left" title="Settings and About" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="roadmap.html" class="btn btn-neutral float-right" title="Limitations and roadmap" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

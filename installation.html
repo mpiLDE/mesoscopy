@@ -1,0 +1,248 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Installation &mdash; mesoscoPy documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=938c9ccc"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Quick overview" href="quickstart.html" />
+    <link rel="prev" title="mesoscoPy" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            mesoscoPy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#install-a-conda-distribution">1. Install a conda distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-mesoscopy">2. Get mesoscoPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-the-environment">3. Create the environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-the-program">4. Install the program</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#drivers-and-visa-for-the-instruments-that-need-them">5. Drivers and VISA, for the instruments that need them</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#start-the-program">6. Start the program</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#updating">Updating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#something-does-not-work">Something does not work?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="station_file.html">Building the station file</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The tabs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tabs/data.html">Data tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tabs/instruments.html">Instruments tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tabs/parameter_explorer.html">Parameter explorer tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tabs/measurement.html">Measurement tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tabs/queue.html">Queue tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tabs/monitor.html">Monitor tab</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The whole program</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="program/settings.html">Settings and About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="program/safety.html">Safety</a></li>
+<li class="toctree-l1"><a class="reference internal" href="program/roadmap.html">Limitations and roadmap</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">More</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">mesoscoPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Installation</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/mpilde/mesoscopy/blob/main/docs/installation.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="installation">
+<span id="id1"></span><h1>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h1>
+<p>mesoscoPy is a Python program with a graphical interface. It runs on Windows, macOS and Linux and needs <strong>Python 3.14 or
+newer</strong>. The simplest way to get a working installation is a dedicated <em>conda</em> environment: the file <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> of
+the repository lists what the program needs: QCoDeS, Qt, NumPy, Matplotlib, SciPy and PyYAML. The drivers of some instruments
+are optional and are installed separately (see below).</p>
+<nav class="contents local" id="on-this-page">
+<p class="topic-title">On this page</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#install-a-conda-distribution" id="id2">1. Install a conda distribution</a></p></li>
+<li><p><a class="reference internal" href="#get-mesoscopy" id="id3">2. Get mesoscoPy</a></p></li>
+<li><p><a class="reference internal" href="#create-the-environment" id="id4">3. Create the environment</a></p></li>
+<li><p><a class="reference internal" href="#install-the-program" id="id5">4. Install the program</a></p></li>
+<li><p><a class="reference internal" href="#drivers-and-visa-for-the-instruments-that-need-them" id="id6">5. Drivers and VISA, for the instruments that need them</a></p></li>
+<li><p><a class="reference internal" href="#start-the-program" id="id7">6. Start the program</a></p></li>
+<li><p><a class="reference internal" href="#updating" id="id8">Updating</a></p></li>
+<li><p><a class="reference internal" href="#something-does-not-work" id="id9">Something does not work?</a></p></li>
+</ul>
+</nav>
+<section id="install-a-conda-distribution">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">1. Install a conda distribution</a><a class="headerlink" href="#install-a-conda-distribution" title="Link to this heading"></a></h2>
+<p>Install <a class="reference external" href="https://github.com/conda-forge/miniforge">Miniforge</a> (recommended) or Anaconda, then open a terminal. On
+Windows, use the <em>Miniforge Prompt</em> (or <em>Anaconda Prompt</em>) that the installer adds to the Start menu.</p>
+</section>
+<section id="get-mesoscopy">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">2. Get mesoscoPy</a><a class="headerlink" href="#get-mesoscopy" title="Link to this heading"></a></h2>
+<p>Download the latest release from <a class="reference external" href="https://github.com/julienbarrier/mesoscopy/releases">the releases page</a> and unpack it,
+or clone the repository (it can be less stable than a release):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/mpilde/mesoscopy.git
+<span class="nb">cd</span><span class="w"> </span>mesoscopy
+</pre></div>
+</div>
+</section>
+<section id="create-the-environment">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">3. Create the environment</a><a class="headerlink" href="#create-the-environment" title="Link to this heading"></a></h2>
+<p>From the <code class="docutils literal notranslate"><span class="pre">mesoscopy</span></code> folder:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environment.yml
+conda<span class="w"> </span>activate<span class="w"> </span>mesoscopy
+</pre></div>
+</div>
+<p>This creates an environment called <code class="docutils literal notranslate"><span class="pre">mesoscopy</span></code>. You activate it (<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">mesoscopy</span></code>) every time you open a new
+terminal, before using the program.</p>
+</section>
+<section id="install-the-program">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">4. Install the program</a><a class="headerlink" href="#install-the-program" title="Link to this heading"></a></h2>
+<p>With the environment activated, still in the <code class="docutils literal notranslate"><span class="pre">mesoscopy</span></code> folder:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>.
+</pre></div>
+</div>
+<p>This installs mesoscoPy and the <code class="docutils literal notranslate"><span class="pre">mesoscopy</span></code> command. If you want to change the code and see the changes at once, use
+<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code> (an <em>editable</em> install) instead.</p>
+</section>
+<section id="drivers-and-visa-for-the-instruments-that-need-them">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">5. Drivers and VISA, for the instruments that need them</a><a class="headerlink" href="#drivers-and-visa-for-the-instruments-that-need-them" title="Link to this heading"></a></h2>
+<p>The environment is the bare minimum to run the program. Instruments may need more, which you install in the same environment
+(<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">mesoscopy</span></code> first):</p>
+<dl>
+<dt><strong>Zurich Instruments MFLI</strong> (and the other drivers of the QCoDeS contrib package)</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"zhinst&gt;=26.7.2"</span><span class="w"> </span><span class="s2">"zhinst-qcodes&gt;=0.8.1"</span><span class="w"> </span><span class="s2">"qcodes_contrib_drivers&gt;=0.24.0"</span>
+</pre></div>
+</div>
+<p>or <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&quot;.[zurich]&quot;</span></code> from the <code class="docutils literal notranslate"><span class="pre">mesoscopy</span></code> folder. The MFLI is reached through the <em>LabOne</em> data server, which you
+install from Zurich Instruments.</p>
+</dd>
+<dt><strong>VISA instruments</strong> (GPIB, USB, serial, network)</dt><dd><p>QCoDeS installs PyVISA, which needs a VISA backend. Either install the VISA library of your instrument manufacturer, for
+example <a class="reference external" href="https://www.rohde-schwarz.com/applications/r-s-visa-application-note_56280-148812.html">R&amp;S VISA</a> or NI-VISA
+(needed for <strong>GPIB</strong> and <strong>USB</strong>), or install the pure-Python backend, enough for instruments on a network or a serial port:
+<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">pyvisa-py</span> <span class="pre">pyserial</span></code> (or <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&quot;.[visa]&quot;</span></code>).</p>
+</dd>
+</dl>
+<p>On Linux, tell PyVISA where a VISA library is, in <code class="docutils literal notranslate"><span class="pre">~/.pyvisarc</span></code>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[Paths]
+
+VISA library: /usr/lib/librsvisa.so
+</pre></div>
+</div>
+<p>See the <a class="reference external" href="https://pyvisa.readthedocs.io/en/latest/introduction/configuring.html">PyVISA documentation</a> for the details. The
+simulated instruments of <a class="reference internal" href="quickstart.html#quickstart"><span class="std std-ref">the quick overview</span></a> need none of this.</p>
+</section>
+<section id="start-the-program">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">6. Start the program</a><a class="headerlink" href="#start-the-program" title="Link to this heading"></a></h2>
+<p>With the environment activated:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mesoscopy
+</pre></div>
+</div>
+<p>A window opens. If you have no hardware at hand, <a class="reference internal" href="quickstart.html#quickstart"><span class="std std-ref">the quick overview</span></a> shows how to try every tab on simulated
+instruments.</p>
+</section>
+<section id="updating">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">Updating</a><a class="headerlink" href="#updating" title="Link to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>mesoscopy
+git<span class="w"> </span>pull
+conda<span class="w"> </span>env<span class="w"> </span>update<span class="w"> </span>--file<span class="w"> </span>environment.yml<span class="w"> </span>--prune
+pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>.
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">--prune</span></code> removes what the environment file does not list, so install the optional packages of step 5 again if you use them.</p>
+</section>
+<section id="something-does-not-work">
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">Something does not work?</a><a class="headerlink" href="#something-does-not-work" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">mesoscopy:</span> <span class="pre">command</span> <span class="pre">not</span> <span class="pre">found</span></code></dt><dd><p>The environment is not activated (<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">mesoscopy</span></code>), or <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">.</span></code> was not run in it.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ModuleNotFoundError</span></code> when starting</dt><dd><p>Update the environment (see above). If the message names a driver package (<code class="docutils literal notranslate"><span class="pre">zhinst</span></code>, <code class="docutils literal notranslate"><span class="pre">qcodes_contrib_drivers</span></code> …), it is one
+of the optional ones of step 5.</p>
+</dd>
+<dt>The window opens but an instrument cannot be loaded</dt><dd><p>See <a class="reference internal" href="tabs/instruments.html#instruments"><span class="std std-ref">the Instruments tab</span></a> and <a class="reference internal" href="station_file.html#station-file"><span class="std std-ref">the station file</span></a>: the message under the
+buttons says what failed (a wrong address, a missing VISA library, an instrument that is already in use …).</p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="mesoscoPy" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="quickstart.html" class="btn btn-neutral float-right" title="Quick overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

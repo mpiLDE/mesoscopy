@@ -1,0 +1,233 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instruments tab &mdash; mesoscoPy documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=938c9ccc"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Parameter explorer tab" href="parameter_explorer.html" />
+    <link rel="prev" title="Data tab" href="data.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            mesoscoPy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../station_file.html">Building the station file</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The tabs</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="data.html">Data tab</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Instruments tab</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#loading-a-station">Loading a station</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#loading-the-instruments">Loading the instruments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-connected-instruments">The connected instruments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-instrument-panel">The instrument panel</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="parameter_explorer.html">Parameter explorer tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="measurement.html">Measurement tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="queue.html">Queue tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monitor.html">Monitor tab</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The whole program</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../program/settings.html">Settings and About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../program/safety.html">Safety</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../program/roadmap.html">Limitations and roadmap</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">More</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">mesoscoPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Instruments tab</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/mpilde/mesoscopy/blob/main/docs/tabs/instruments.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="instruments-tab">
+<span id="instruments"></span><h1>Instruments tab<a class="headerlink" href="#instruments-tab" title="Link to this heading"></a></h1>
+<p>The Instruments tab connects mesoscoPy to your instruments. You choose a <a class="reference internal" href="../station_file.html#station-file"><span class="std std-ref">station file</span></a>, load it, and then
+load the instruments it describes.</p>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/instruments_loaded.png"><img alt="The Instruments tab with three connected instruments" src="../_images/instruments_loaded.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Three instruments connected. The coloured dots show that they answer.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<nav class="contents local" id="on-this-page">
+<p class="topic-title">On this page</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#loading-a-station" id="id3">Loading a station</a></p></li>
+<li><p><a class="reference internal" href="#loading-the-instruments" id="id4">Loading the instruments</a></p></li>
+<li><p><a class="reference internal" href="#the-connected-instruments" id="id5">The connected instruments</a></p></li>
+<li><p><a class="reference internal" href="#the-instrument-panel" id="id6">The instrument panel</a></p></li>
+</ul>
+</nav>
+<section id="loading-a-station">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Loading a station</a><a class="headerlink" href="#loading-a-station" title="Link to this heading"></a></h2>
+<p>Under <em>Station</em>:</p>
+<ol class="arabic simple">
+<li><p><strong>Browse…</strong> to the folder that holds your station files. The drop-down below lists every <code class="docutils literal notranslate"><span class="pre">*.station.yaml</span></code> file of the
+folder.</p></li>
+<li><p>Choose the file and click <strong>Load Station</strong>. This only <em>reads</em> the file: nothing is connected yet. The instruments it
+describes appear in the <em>Instruments to Load</em> list, and the ones you had loaded the last time you used this file are
+already selected.</p></li>
+</ol>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="../_images/instruments_station.png"><img alt="The Instruments tab after loading a station file" src="../_images/instruments_station.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">After <strong>Load Station</strong>: the instruments of the file are listed, none is connected yet.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>If the file cannot be read, the reason (usually a YAML syntax error) is shown under the buttons. See
+<a class="reference internal" href="../station_file.html#station-file"><span class="std std-ref">the station file</span></a> for how to write one. Loading another station while instruments are connected keeps
+the instruments whose entry is identical in the new file (same driver, address, presets and aliases) and disconnects the others.</p>
+</section>
+<section id="loading-the-instruments">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Loading the instruments</a><a class="headerlink" href="#loading-the-instruments" title="Link to this heading"></a></h2>
+<p>Select the instruments in <em>Instruments to Load</em> (click, or Shift-click for several) and click <strong>Load Selected Instruments</strong>.
+mesoscoPy imports each driver and connects. The instrument moves to <em>Connected instruments</em>; the parameters that the station
+file declared as aliases appear in <a class="reference internal" href="parameter_explorer.html#parameter-explorer"><span class="std std-ref">the Parameter explorer</span></a> as experiment parameters, and the tabs
+that need instruments open.</p>
+<p>If an instrument cannot be loaded, the message under the list says why (a wrong address, a missing driver package, a device
+that is busy). The other instruments are still loaded.</p>
+</section>
+<section id="the-connected-instruments">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">The connected instruments</a><a class="headerlink" href="#the-connected-instruments" title="Link to this heading"></a></h2>
+<p>Each connected instrument shows its model, its serial number and a <strong>coloured dot</strong>:</p>
+<ul class="simple">
+<li><p><strong>green</strong>: the instrument answered the last check (a <code class="docutils literal notranslate"><span class="pre">get_idn</span></code> request, repeated every few seconds in the background; the
+readings of <a class="reference internal" href="monitor.html#monitor"><span class="std std-ref">the Monitor</span></a> count as a check too);</p></li>
+<li><p><strong>red</strong>: it did not answer. Hover over the dot for the time of the last check and the error.</p></li>
+</ul>
+<p>An instrument that is in use by a measurement is not asked: the check comes back when it is free.</p>
+<p>The buttons under the list:</p>
+<dl class="simple">
+<dt><strong>Update Snapshot of Selected</strong></dt><dd><p>Reads every parameter of the selected instruments again. QCoDeS stores the <em>last known</em> values in the snapshot saved with
+each run, so do this after you changed something on the front panel of an instrument.</p>
+</dd>
+<dt><strong>Reconnect Selected</strong></dt><dd><p>Appears when an instrument stops answering. It closes the instrument and loads it again from the station file. The
+experiment parameters changed by the program that belong to it are first brought to 0 (see <a class="reference internal" href="../program/safety.html#safety"><span class="std std-ref">Safety</span></a>), unless the
+instrument is not answering.</p>
+</dd>
+<dt><strong>Disconnect Selected</strong></dt><dd><p>Closes the instrument and removes it from the station. The experiment parameters of that instrument that the program has
+changed are first ramped to 0, at their maximum ramp rate, with a progress window. It is refused while a measurement or
+another action uses the instrument.</p>
+</dd>
+</dl>
+<p>Right-click an instrument for a menu with <strong>Update snapshot</strong>, <strong>Disconnect</strong>, and <strong>Save state … to file</strong> and <strong>Restore
+state … from file / from a run</strong>, which write and read all the parameters of the instrument.</p>
+</section>
+<section id="the-instrument-panel">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">The instrument panel</a><a class="headerlink" href="#the-instrument-panel" title="Link to this heading"></a></h2>
+<p>Select a single instrument and a panel opens on the right with three pages, chosen by the buttons at the bottom:</p>
+<dl>
+<dt><strong>Command log</strong></dt><dd><p>The commands that QCoDeS sent to the instrument and the answers it got, as they happen. It helps to see what a driver
+really does. Not every driver logs its commands (a simulated instrument for instance).</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/instruments_log.png"><img alt="The command log of an instrument" src="../_images/instruments_log.png" style="width: 100%;" />
+</a>
+</figure>
+</dd>
+<dt><strong>Raw command</strong></dt><dd><p>Type a command, then <strong>Ask</strong> (send it and read the answer) or <strong>Write</strong> (send it). Only for VISA instruments. Raw commands
+go straight to the instrument: <strong>the safe limits, the validators and the ramp rates do not apply</strong>, and they are refused
+while a measurement runs.</p>
+</dd>
+<dt><strong>Snapshot</strong></dt><dd><p>All the parameters of the instrument with their last known values.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/instruments_snapshot.png"><img alt="The snapshot of an instrument" src="../_images/instruments_snapshot.png" style="width: 100%;" />
+</a>
+</figure>
+</dd>
+</dl>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="data.html" class="btn btn-neutral float-left" title="Data tab" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="parameter_explorer.html" class="btn btn-neutral float-right" title="Parameter explorer tab" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
