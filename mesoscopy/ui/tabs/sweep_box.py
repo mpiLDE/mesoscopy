@@ -103,9 +103,10 @@ class SweepDimensionBox(QGroupBox):
         self.stop_input = _line_edit("1.0", "Stop value")
         self.num_input = QSpinBox()
         self.num_input.setMinimum(1)
-        self.num_input.setMaximum(9999)  # four digits: the field is made just wide enough
+        self.num_input.setMaximum(9999)
+        self.num_input.setButtonSymbols(QSpinBox.ButtonSymbols.NoButtons)
         self.num_input.setValue(101)
-        self.num_input.setFixedWidth(self.num_input.fontMetrics().horizontalAdvance("99999") + 28)
+        self.num_input.setFixedWidth(self.num_input.fontMetrics().horizontalAdvance("99999") + 16)
         self.delay_input = _line_edit("0.6", "Delay in seconds")
         for edit in (self.start_input, self.stop_input):  # the values are typed and picked from the plot: room for many digits
             edit.setMinimumWidth(START_STOP_WIDTH)
